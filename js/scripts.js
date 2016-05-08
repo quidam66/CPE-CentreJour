@@ -44,21 +44,9 @@ var ph = {
 ph.init();
 
 $(".nav a").on("click", function(){
-	/*if($(this).parent().hasClass("active"))
-	{
-		console.log("dans le IF");
-		$(this).parent().addClass("active");
-		$(".nav").find(".active").removeClass("active");
 
-	}
-	else
-	{
-		console.log("dans le ELSE");
-		$(this).parent().addClass("active");		
-	}*/
 	if($(this).parent().hasClass("dropdown"))
 	{
-		
 		if(!$(this).parent().hasClass("active") && !_subItemSelected)
 		{
 			console.log("dans le IF du IF");
@@ -74,11 +62,7 @@ $(".nav a").on("click", function(){
 		else
 		{
 			console.log("dans le ELSE du IF");
-			//$(this).parent().addClass("active");
 		}
-		
-		//$(this).parent().addClass("selected");
-		
 	}
 	else
 	{
@@ -104,7 +88,5 @@ $(".nav a").on("click", function(){
 			$(this).parent().addClass("active");
 			_subItemSelected = false;
 		}
-
-		
 	}
 });
