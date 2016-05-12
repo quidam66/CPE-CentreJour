@@ -19,8 +19,8 @@
 <div>
 
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="logo">
-			<a href="#"><img src="images/logo@2x.png" width="248" height="44" alt="logo" /></a>
+		<div id="logoContainer">
+			<a href="index.html"><div id="logoCPE" alt="logo CPE Centre-Jour"></div></a>
 		</div>
 
 		<div class="container">
@@ -32,37 +32,37 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">CPE Centre-Jour</a>
+				<!--<a class="navbar-brand" href="#">CPE Centre-Jour</a>-->
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="accueil.html" target="index_ifrm">Accueil<span class="sr-only">(current)</span></a></li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Le personnel<span class="caret"></span></a>
+					<li class="dropdown inactive"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Le personnel<span class="caret"></span></a>
 						<ul class="dropdown-menu subitem">
-							<li><a href="equipe.html" target="index_ifrm">L'équipe</a></li>
-							<li><a href="c_a.html" target="index_ifrm">Le conseil d'administration</a></li>
+							<li class="inactive"><a href="equipe.html" target="index_ifrm">L'équipe</a></li>
+							<li class="inactive"><a href="c_a.html" target="index_ifrm">Le conseil d'administration</a></li>
 						</ul>
 					</li>
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Documents<span class="caret"></span></a>
+					<li class="dropdown inactive"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Documents<span class="caret"></span></a>
 						<ul class="dropdown-menu subitem">
-							<li><a href="historique.html" target="index_ifrm">Historique</a></li>
-							<li><a href="missions_valeurs.html" target="index_ifrm">Missions et Valeurs</a></li>
-							<li><a href="politique_alimentaire.html" target="index_ifrm">Politique alimentaire</a></li>
-							<li><a href="politique_apprentissage.html" target="index_ifrm">Politique d'apprentissage</a></li>
-							<li><a href="politique_sante.html" target="index_ifrm">Politique de santé</a></li>
-							<li><a href="politique_sommeil.html" target="index_ifrm">Politique du sommeil</a></li>
-							<li><a href="programme_educatif.html" target="index_ifrm">Programme éducatif</a></li>
+							<li class="inactive"><a href="historique.html" target="index_ifrm">Historique</a></li>
+							<li class="inactive"><a href="missions_valeurs.html" target="index_ifrm">Missions et Valeurs</a></li>
+							<li class="inactive"><a href="politique_alimentaire.html" target="index_ifrm">Politique alimentaire</a></li>
+							<li class="inactive"><a href="politique_apprentissage.html" target="index_ifrm">Politique d'apprentissage</a></li>
+							<li class="inactive"><a href="politique_sante.html" target="index_ifrm">Politique de santé</a></li>
+							<li class="inactive"><a href="politique_sommeil.html" target="index_ifrm">Politique du sommeil</a></li>
+							<li class="inactive"><a href="programme_educatif.html" target="index_ifrm">Programme éducatif</a></li>
 						</ul>
 					</li>
-					<li><a href="contact.html" target="index_ifrm">Contactez-nous<span class="sr-only"></span></a></li>
-					<li><a href="absence.html" target="index_ifrm">Absence<span class="sr-only"></span></a></li>		    
+					<li class="inactive"><a href="contact.html" target="index_ifrm">Contactez-nous<span class="sr-only"></span></a></li>
+					<li class="inactive"><a href="absence.html" target="index_ifrm">Absence<span class="sr-only"></span></a></li>		    
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-	<div>
+	<div class="myIframe">
 		<iframe id="index_ifrm" src="accueil.html" name="index_ifrm"></iframe>
 	</div>			
 </div>

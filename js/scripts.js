@@ -50,7 +50,10 @@ $(".nav a").on("click", function(){
 		if(!$(this).parent().hasClass("active") && !_subItemSelected)
 		{
 			console.log("dans le IF du IF");
+			$(".nav").find(".active").addClass("inactive");
 			$(".nav").find(".active").removeClass("active");
+
+			$(this).parent().removeClass("inactive");
 			$(this).parent().addClass("active");
 		}
 		else if(!$(this).parent().hasClass("active") && _subItemSelected)
@@ -72,8 +75,10 @@ $(".nav a").on("click", function(){
 			if(_subItemSelected)
 			{
 				console.log("dans le IF du IF du ELSE");
+				$(".nav").find(".active").addClass("inactive");
 				$(".nav").find(".active").removeClass("active");
 				$(".nav").find(".selected").removeClass("selected");
+				
 				$(this).parent().parent().parent().addClass("active");
 				
 			}
@@ -84,7 +89,10 @@ $(".nav a").on("click", function(){
 		else
 		{
 			console.log("dans le ELSE du ELSE");
+			$(".nav").find(".active").addClass("inactive");
 			$(".nav").find(".active").removeClass("active");
+			
+			$(this).parent().removeClass("inactive");
 			$(this).parent().addClass("active");
 			_subItemSelected = false;
 		}

@@ -37,10 +37,47 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-#index_ifrm {
+#logoContainer
+{
+  margin: 20px 0 0 20px;
+}
+
+#logoCPE
+{
+  padding: 25px;
+  background-image: url("../images/logo@2x.png");
+  background-repeat: no-repeat;
+  background-size: 248px 44px; 
+}
+/*.myIframe {
+  position: relative;
+  padding-top: 120px;
+  height: 0;
+  overflow: hidden;
+  -webkit-overflow-scrolling:touch;
+  border: solid black 1px;
+} 
+.myIframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  overflow: scroll;
+}*/
 
-  padding-top: 100px;
-  float:top;
+#index_ifrm {
+  max-height:100% !important;
+
+  padding-top: 120px;
+}
+
+.active {
+  border: solid 3px #4A69F9;
+  background-color: #C6CFF9;
+}
+
+.inactive {
+  border: solid 3px #89F126;
+  background-color: #D0F9A9;
 }
