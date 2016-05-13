@@ -73,11 +73,54 @@ img {
 }
 
 .active {
-  border: solid 3px #4A69F9;
-  background-color: #C6CFF9;
+  border-left: 3px solid #476573 !important;
+  border-top: 3px solid #476573 !important;
+  border-bottom: 3px solid #476573 !important; 
+}
+
+.active:last-child
+{
+  border-right: 3px solid #476573 !important;
 }
 
 .inactive {
-  border: solid 3px #89F126;
-  background-color: #D0F9A9;
+  border-left: 3px solid #476573 !important;
+  border-top: 3px solid #476573 !important;
+  border-bottom: 3px solid #476573 !important;
+}
+
+.inactive:last-child
+{
+  border-right: 3px solid #476573 !important;
+}
+
+.topsub
+{
+  margin-top: -1px;
+}
+.subsub
+{
+  margin-top: -3px;
+}
+
+.dropdown-menu .inactive
+{
+  border-right: 3px solid #476573 !important;
+}
+
+.red
+{
+  background-color: #ff5468;
+}
+
+.pink
+{
+  background-color: #dc9d9b;
+  color: white;
+}
+
+.blue
+{
+  background-color: #608a9b;
+  color: white;
 }
