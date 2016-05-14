@@ -44,10 +44,10 @@ img {
 
 #logoCPE
 {
-  padding: 25px;
-  background-image: url("../images/logo@2x.png");
+  padding: 50px;
+  background-image: url("../images/CentreJour_730x90.png");
   background-repeat: no-repeat;
-  background-size: 248px 44px; 
+  background-size: 730px 90px; 
 }
 /*.myIframe {
   position: relative;
@@ -66,10 +66,21 @@ img {
   overflow: scroll;
 }*/
 
-#index_ifrm {
-  max-height:100% !important;
+.index_ifrm {
+  /*max-height:100% !important;
+  height:100%;*/
+  /*width:100%;*/
+  padding-top: 175px;
+}
 
-  padding-top: 120px;
+#information {
+  padding-top: 175px;
+}
+
+@media (max-width: 767px) {
+  #information {
+    padding-top: 0;
+  }
 }
 
 .active {

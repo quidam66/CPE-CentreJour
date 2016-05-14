@@ -78,7 +78,7 @@ $(".nav a").on("click", function(){
 				$(".nav").find(".active").addClass("inactive");
 				$(".nav").find(".active").removeClass("active");
 				$(".nav").find(".selected").removeClass("selected");
-				
+
 				$(this).parent().parent().parent().addClass("active");
 				
 			}
@@ -97,4 +97,9 @@ $(".nav a").on("click", function(){
 			_subItemSelected = false;
 		}
 	}
+});
+
+
+$(document).ready(function(){
+	$('iframe.index_ifrm').iframeAutoHeight({minHeight: 400});
 });
