@@ -99,7 +99,22 @@ $(".nav a").on("click", function(){
 	}
 });
 
+//maframe = parent.document.getElementById('index_ifrm');// frame in the parent 
 
-$(document).ready(function(){
-	$('iframe.index_ifrm').iframeAutoHeight({minHeight: 400});
-});
+function resizeIframe()
+{
+	var pageH = $(".page").css("height");
+	pageH = pageH.substring(0, pageH.indexOf("px"));
+
+	var contH = $(".site-footer").css("height");
+	contH = contH.substring(0, contH.indexOf("px"));
+
+	console.log("height du page moins footer = " + (pageH));
+	console.log("height du page moins footer = " + (contH));
+
+	$(".index_ifrm").css("height", (pageH - contH));
+};
+
+//maframe.onload = resizeIframe;
+window.onresize = resizeIframe; 
+
