@@ -103,16 +103,28 @@ $(".nav a").on("click", function(){
 
 function resizeIframe()
 {
-	var pageH = $(".page").css("height");
-	pageH = pageH.substring(0, pageH.indexOf("px"));
+	var infoH = $(".information").css("height");
+	infoH = infoH.substring(0, infoH.indexOf("px"));
 
-	var contH = $(".site-footer").css("height");
-	contH = contH.substring(0, contH.indexOf("px"));
+	var headH = $(".site-header").css("height");
+	headH = headH.substring(0, headH.indexOf("px"));
 
-	console.log("height du page moins footer = " + (pageH));
-	console.log("height du page moins footer = " + (contH));
+	var footH = $(".site-footer").css("height");
+	footH = footH.substring(0, footH.indexOf("px"));
 
-	$(".index_ifrm").css("height", (pageH - contH));
+	console.log("height du page moins document WIDTH = " + document.body.clientWidth);
+
+	if(infoH > document.body.clientHeight)
+	{
+		$(".index_ifrm").css("height", infoH);
+	}
+	else
+	{
+		$(".index_ifrm").css("height", (document.body.clientHeight - footH - 5));		
+	}
+
+	//$(".index_ifrm").css("height", infoH);
+	//$(".site-footer").css("bottom", 10);
 };
 
 //maframe.onload = resizeIframe;
