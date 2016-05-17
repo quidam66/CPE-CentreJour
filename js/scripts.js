@@ -99,11 +99,10 @@ $(".nav a").on("click", function(){
 	}
 });
 
-//maframe = parent.document.getElementById('index_ifrm');// frame in the parent 
 
 function resizeIframe()
 {
-	var infoH = $(".information").css("height");
+	/*var infoH = $(".information").css("height");
 	infoH = infoH.substring(0, infoH.indexOf("px"));
 
 	var headH = $(".site-header").css("height");
@@ -121,12 +120,21 @@ function resizeIframe()
 	else
 	{
 		$(".index_ifrm").css("height", (document.body.clientHeight - footH - 5));		
-	}
+	}*/
 
 	//$(".index_ifrm").css("height", infoH);
 	//$(".site-footer").css("bottom", 10);
+
+	//console.log($(".index_ifrm").contents().outerHeight());
+	$(".index_ifrm").css("height", 0);
+	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 275);		
+
 };
 
-//maframe.onload = resizeIframe;
-window.onresize = resizeIframe; 
+/*$("#css1").click(function() { $("link[rel=stylesheet]").attr({href : "css/style.css"}); }); 
+$("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleursChaudes.css"}); });*/
+
+//$(".index_ifrm").onLoad = resizeIframe;
+//maframe.onLoad = resizeIframe();
+//window.onresize = resizeIframe; 
 

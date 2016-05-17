@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background: #fafafa;
+  background: #FCF9EB;
   color: #222222;
   cursor: auto;
   font-family: "Montserrat", sans-serif;
@@ -71,18 +71,19 @@ img {
 
 .site-header {
   /*border: solid green 1px;*/
+    background-color: #FCF9EB;
 }
 
 .site-container {
   max-height: 100% !important;
   /*border: solid yellow 1px;*/
   /*margin-right: 15px;*/
-  background-color: #f8f8f8;
+  background-color: #FCF9EB;
 }
 
 .site-footer {
   height: 40px;
-  background-color: #f8f8f8;
+  background-color: #FCF9EB;
   /*border: solid black 1px;*/
 }
 
@@ -110,25 +111,25 @@ img {
 
 
 .active {
-  border-left: 3px solid #476573 !important;
-  border-top: 3px solid #476573 !important;
-  border-bottom: 3px solid #476573 !important; 
+  border-left: 3px solid #1b2600 !important;
+  border-top: 3px solid #1b2600 !important;
+  border-bottom: 3px solid #1b2600 !important; 
 }
 
 .active:last-child
 {
-  border-right: 3px solid #476573 !important;
+  border-right: 3px solid #1b2600 !important;
 }
 
 .inactive {
-  border-left: 3px solid #476573 !important;
-  border-top: 3px solid #476573 !important;
-  border-bottom: 3px solid #476573 !important;
+  border-left: 3px solid #1b2600 !important;
+  border-top: 3px solid #1b2600 !important;
+  border-bottom: 3px solid #1b2600 !important;
 }
 
 .inactive:last-child
 {
-  border-right: 3px solid #476573 !important;
+  border-right: 3px solid #1b2600 !important;
 }
 
 .topsub
@@ -142,31 +143,34 @@ img {
 
 .dropdown-menu .inactive
 {
-  border-right: 3px solid #476573 !important;
+  border-right: 3px solid #1b2600 !important;
 }
 
+/*orange*/
 .red
 {
-  background-color: #ff5468;
+  background-color: #dd4f0d;
 }
 
+/*jaune*/
 .pink
 {
-  background-color: #dc9d9b;
+  background-color: #dfb81d;
   color: white;
 }
 
+/*vert*/
 .blue
 {
-  background-color: #608a9b;
+  background-color: #9bdd0d;
   color: white;
 }
 
 .separator
 {
   width:90%;
-  border-top: 3px solid #dc9d9b;
-  border-bottom: 3px solid #608a9b;
+  border-top: 3px solid #dfb81d;
+  border-bottom: 3px solid #dd4f0d;
   margin-bottom: 30px;
   padding: 0;
   height: 15px;
@@ -183,10 +187,11 @@ img {
 /*INDEX RIGHT SECTION*/
 .rightSectionTitle
 {
-  color: #476573;
+  color: #1b2600;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: 3px;
 }
 
 .box-title
@@ -198,7 +203,7 @@ img {
   border: 2px solid white;
   text-align: center;
   word-wrap:normal; 
-  background-color: #476573;
+  background-color: #1b2600;
   padding: 1px;
 }
 
@@ -206,7 +211,7 @@ img {
 {
   margin-top: 0;
   padding-top: 10px;
-  border-top: 3px solid #476573
+  border-top: 3px solid #1b2600
 }
 
 .box-inner > p
@@ -226,7 +231,7 @@ img {
 .texteInfo
 {
   max-width: 90% !important;
-  border: 3px solid #476573 !important;
+  border: 3px solid #1b2600 !important;
   margin-bottom: 40px;
 }
 
@@ -235,9 +240,9 @@ img {
 /* IFRAME */
 .iframe-title-bg
 {
-  color: #476573;
-  border-top: 3px solid #dc9d9b;
-  border-bottom: 3px solid #608a9b;
+  color: #1b2600;
+  border-top: 3px solid #dfb81d;
+  border-bottom: 3px solid #dd4f0d;
   margin: 46px 0 46px;
   padding: 0;
   height: 8px;
@@ -251,7 +256,7 @@ img {
   position: relative;
   top: -18px;
   padding: 1px 20px;
-  background: #fafafa;
+  background: #FCF9EB;
 }
 
 .iframe-p-text
