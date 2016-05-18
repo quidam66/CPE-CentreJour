@@ -245,7 +245,7 @@ img {
   border-bottom: 3px solid #dd4f0d;
   margin: 46px 0 46px;
   padding: 0;
-  height: 8px;
+  height: 15px;
   text-align: center;
 }
 
@@ -263,4 +263,17 @@ img {
 {
   text-align: justify;
   margin: 0 20px;
+}
+
+.iframe-div-title
+{
+  color: #1b2600;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.iframe-div-subtitle
+{
+  color: #dd4f0d;
+  font-size: 16px;
 }
