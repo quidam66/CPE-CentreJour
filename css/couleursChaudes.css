@@ -166,6 +166,11 @@ img {
   color: white;
 }
 
+.site-container
+{
+  margin: 0 5px;
+}
+
 .separator
 {
   width:90%;
@@ -262,6 +267,13 @@ img {
 .iframe-p-text
 {
   text-align: justify;
+  /*margin: 0 20px;*/
+}
+
+.iframe-p-text > p
+{
+  font-size: 16px;
+  text-align: justify;
   margin: 0 20px;
 }
 
@@ -276,4 +288,15 @@ img {
 {
   color: #dd4f0d;
   font-size: 16px;
+}
+
+.iframe-text > p
+{
+  font-size: 12px;
+  text-align: justify;
+  margin: 0 20px;
+}
+
+.ca-member{
+  margin-bottom: 30px;
 }
