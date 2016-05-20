@@ -300,3 +300,23 @@ img {
 .ca-member{
   margin-bottom: 30px;
 }
+
+.small-height
+{
+  margin-top: 25px;
+}
+
+.small-height > ul
+{
+  margin-left:-6px;
+  color: #1b2600;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.list-pol-ali
+{
+  color: #222222;
+  font-size: 14px;
+  font-weight: bold;
+}
