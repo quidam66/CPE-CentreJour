@@ -6,188 +6,80 @@
     <title>Playhouse</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
-</head>
-<body>
-	<div class="wrapper">
-		<div class="row">
-			<div class="medium-7 large-6 columns">
-				<div class="map">
-					<figure>
-						<img src="images/550x550.png" alt="pic4" />
-					</figure>
-				</div>
-				<div class="location">
-					<table>
-						<tbody>
-							<tr>
-								<td colspan="2">
-									<h4>Location & hours</h4>
-								</td>
-							</tr>
-							<tr>
-								<td rowspan="2">
+	<link rel="stylesheet" href="css/couleursChaudes.css" />
+	<!--<link rel="stylesheet" href="css/style.css" />-->
 
-									<p class="info"><span>A:</span> Cobble Hill Center <br/>
-										381 Bergan St <br/>
-										Brooklyn, NY 11229
-									</p>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+	<script src="bootstrap/js/jquery-2.1.3.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body id="iframeBody">
+	<div class="container">
+		<div>
+			<div class="iframe-p-text">
+				<form id="formulaire" name="formulaire" action="includes/contacts.php" method="POST">
+					<br>
+					<br>
+					  <table border="0" cellpadding="0" cellspacing="0">
+					  		  <!--Nom -->
+					          <tbody><tr>
+					            <td class="libelle" align="left" height="15" valign="top"> 			
+		            				Votre nom:&nbsp;
 								</td>
-								<td>				
-									<p class="info"><span>T:</span> 712.850.1086</p>
+							  </tr>
+							  <tr>
+					            <td align="left" height="30" valign="top"> 			
+		            				<input class="input" id="nom" name="nom" size="42" maxlength="50" type="text">
+								</td>						
+							  </tr>
+							  
+					  		  <!--Courriel -->					  
+					          <tr>
+					            <td class="libelle" align="left" height="15" valign="top"> 			
+		            				Votre courriel:&nbsp;
 								</td>
-							</tr>
-							<tr>
-								<td>				
-									<p class="info"><span>E:</span> info@playhouse.com</p>
+							  </tr>
+							  <tr>
+					            <td align="left" height="30" valign="top"> 			
+		            				<input class="input" id="courriel" name="courriel" size="42" maxlength="50" type="text">
+								</td>						
+							  </tr>		
+							  
+							  <!--Sujet -->					  
+					          <tr>
+					            <td class="libelle" align="left" height="15" valign="top"> 			
+		            				Sujet:&nbsp;
 								</td>
-							</tr>
-							<tr>
-								<td>
-							<div class="social-icons six-up">
-								<ul class="concact">
-									<li>
-										<a class="item">
-											<span class="social-imgs twitter">
-											</span>
-										</a>
-									</li>
-									<li>
-										<a class="item">
-											<span class="social-imgs facebook">
-											</span>
-										</a>
-									</li>
-									<li>
-										<a class="item">
-											<span class="social-imgs mail">
-											</span>
-										</a>
-									</li>
-									<li>
-										<a class="item">
-											<span class="social-imgs pinterest">
-											</span>
-										</a>
-									</li>
-									<li>
-										<a class="item">
-											<span class="social-imgs instagram">
-											</span>	
-										</a>
-									</li>
-									<li>
-										<a class="item">
-											<span class="social-imgs gplus"></span>
-										</a>
-									</li>						 
-								</ul>
-							</div>
+							  </tr>
+							  <tr>
+					            <td align="left" height="30" valign="top"> 			
+		            				<input class="input" id="sujet" name="sujet" size="42" maxlength="50" type="text">
+								</td>						
+							  </tr>			  		  
+							  
+					  		  <!--Message -->					  
+					          <tr>
+					            <td class="libelle" align="left" height="15" valign="top"> 			
+		            				Votre message:&nbsp;
 								</td>
-								<td>
-									<p class="info"><span>H:</span> Mon-Sat: 8am-6pm<br />Sun: Closed</p>
-								</td>
-							</tr>
-						 </tbody>
-					</table>
-				</div>
-			</div>
-			<div class="medium-5 large-6 columns">
-				<div class="contact-area clearfix">
-					<h5>Say hello</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					<form>
-						<div class="row">
-							<div class="large-12 columns">
-								<label>
-									<input type="text" placeholder="Name*" />
-								</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="large-12 columns">
-								<label>
-									<input type="text" placeholder="Phone*" />
-								</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="large-12 columns">
-								<label>
-									<input type="text" placeholder="Email*" />
-								</label>
-							</div>
-						</div>
-						<div class="row">
-							<div class="large-12 columns">
-								<label>
-									<textarea placeholder="Message"></textarea>
-								</label>
-							</div>
-						</div>
-						<div class="block">
-							<button class="button">send</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<footer>
-		<div class="line-holder">
-			<div class="row"> 
-				<div class="medium-4 columns r-border">
-					<div class="social-icons six-up">
-						<ul class="white-border">
-							<li>
-								<a class="item">
-									<span class="social-imgs twitter">
-									</span>
-								</a>
-							</li>
-							<li>
-								<a class="item">
-									<span class="social-imgs facebook">
-									</span>
-								</a>
-							</li>
-							<li>
-								<a class="item">
-									<span class="social-imgs mail">
-									</span>
-								</a>
-							</li>
-							<li>
-								<a class="item">
-									<span class="social-imgs pinterest">
-									</span>
-								</a>
-							</li>
-							<li>
-								<a class="item">
-									<span class="social-imgs instagram">
-									</span>	
-								</a>
-							</li>
-							<li>
-								<a class="item">
-									<span class="social-imgs gplus"></span>
-								</a>
-							</li>						 
-						</ul>
-					</div>
-				</div>
-				<div class="medium-4 columns l-border">
-					<div class="copyright">
-						<span>&nbsp; copyright &copy; 2015 playhouse &nbsp;</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="bower_components/foundation/js/foundation.min.js"></script>
-    <script src="js/scripts.js"></script>
+							  </tr>
+							  <tr>
+					            <td align="left" height="250" valign="top"> 
+					            	<textarea id="message" name="message" value="" rows="18" cols="40"></textarea>
+								</td>						
+							  </tr>	
+							  
+					  		  <!--Soumettre -->					  
+					          <tr>			           
+					            <td align="right" height="25" valign="top">
+					            	<input value="Envoyer" onclick="submitform()" type="button">
+									<input id="multi" name="multi" size="40" maxlength="40" value="1" type="hidden">
+									<input id="cc" name="cc" size="40" maxlength="40" value="1" type="hidden">
+								</td>						
+							  </tr>	
+					
+					           
+		  		</tbody></table>
+		      </form>
 </body>
 </html>

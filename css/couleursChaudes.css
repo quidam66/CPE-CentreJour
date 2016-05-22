@@ -336,3 +336,70 @@ img {
 {
   text-decoration: underline;
 }
+
+.item-table-matiere
+{
+  
+  font-style: italic;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.link-table-matiere
+{
+  color: #222222;
+  text-decoration: none;
+}
+
+.link-table-matiere:hover
+{
+  color: #222222;
+}
+
+.nonformat-list
+{
+  margin-left: 25px;
+}
+
+.list-letter
+{
+  margin-left: 35px;
+}
+
+.list-num, .list-letter
+{
+  color: #222222;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.img-cycle-sommeil
+{
+  background: url("../images/cycle-sommeil.png") center no-repeat;
+  height: 400px;
+}
+
+.frame
+{
+  border: 2px solid #1b2600 !important;
+  /*border: 3px solid #1b2600 !important;*/
+  padding: 15px;
+  background-color: #EDDA85;
+}
+
+.frame > p
+{
+  font-size: 16px;
+  text-align: justify;
+}
+
+.frame-title
+{
+  font-weight: bold;
+}
+
+.definition-list
+{
+  color: #222222;
+  font-size: 14px;
+}
