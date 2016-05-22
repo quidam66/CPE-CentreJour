@@ -320,3 +320,19 @@ img {
   font-size: 14px;
   font-weight: bold;
 }
+
+.center
+{
+  text-align: center;
+}
+
+.no-peanut
+{
+  background: url("../images/icon-nopeanut.png") center no-repeat;
+  height: 125px;
+}
+
+.underline
+{
+  text-decoration: underline;
+}
