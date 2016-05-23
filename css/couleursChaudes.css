@@ -37,17 +37,43 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+#cpe-header
+{
+  color: #1b2600;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 60px;
+  position:absolute;
+  top: 40px;
+  left: 20px;
+}
+
+@media (max-width: 767px) {
+  #cpe-header {
+    font-size: 20px;
+    position:absolute;
+    top: 145px;
+    left: 20px;
+  }
+}
+
 #logoContainer
 {
   margin: 20px 0 0 20px;
+  height:100px;
 }
 
 #logoCPE
 {
-  padding: 50px;
-  background-image: url("../images/CentreJour_730x90.png");
+
+  background-image: url("../images/logoCJ.png");
   background-repeat: no-repeat;
-  background-size: 730px 90px; 
+  background-size: 180px 150px;
+  height: 150px;
+  width: 180px;
+  position:absolute;
+  top: 20px;
+  right: 60px;
 }
 
 /*.myIframe {
