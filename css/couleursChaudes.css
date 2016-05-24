@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background: #FCF9EB;
+  background: #beffbe;
   color: #222222;
   cursor: auto;
   font-family: "Montserrat", sans-serif;
@@ -37,44 +37,7 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-#cpe-header
-{
-  color: #1b2600;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 60px;
-  position:absolute;
-  top: 40px;
-  left: 20px;
-}
 
-@media (max-width: 767px) {
-  #cpe-header {
-    font-size: 20px;
-    position:absolute;
-    top: 145px;
-    left: 20px;
-  }
-}
-
-#logoContainer
-{
-  margin: 20px 0 0 20px;
-  height:100px;
-}
-
-#logoCPE
-{
-
-  background-image: url("../images/logoCJ.png");
-  background-repeat: no-repeat;
-  background-size: 180px 150px;
-  height: 150px;
-  width: 180px;
-  position:absolute;
-  top: 20px;
-  right: 60px;
-}
 
 /*.myIframe {
   width: 100%;
@@ -97,19 +60,78 @@ img {
 
 .site-header {
   /*border: solid green 1px;*/
-    background-color: #FCF9EB;
+  background-color: #beffbe;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:90%;
+  margin-right: 16px;
+  height: 185px;
+}
+
+#cpe-header
+{
+  color: #003366;
+  font-family: 'Clicker Script', cursive;
+  font-weight: bold;
+  font-size: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:68%;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  #cpe-header {
+    font-size: 45px;
+    margin-top: 80px;
+    margin-left: 80px;
+  }
+}
+
+/*#logoContainer
+{
+  margin: 20px 0 0 20px;
+  height:100px;
+}
+*/
+#logoCPE
+{
+
+  background-image: url("../images/logoCJ_2.png");
+  background-repeat: no-repeat;
+  background-size: 180px 150px;
+  height: 150px;
+}
+
+/*@media (max-width: 767px) {
+  #logoCPE
+  {
+
+  }
+}*/
+
+.wraper-container
+{
+  width:68%;
+  margin: auto;
 }
 
 .site-container {
   max-height: 100% !important;
   /*border: solid yellow 1px;*/
   /*margin-right: 15px;*/
-  background-color: #FCF9EB;
+  /*margin: 0 5px;*/
+  background-color: #beffbe;
+  width:75%;
+  margin: auto;
 }
 
 .site-footer {
   height: 40px;
-  background-color: #FCF9EB;
+  background-color: #beffbe;
+  width:75%;
+  margin: auto;
   /*border: solid black 1px;*/
 }
 
@@ -118,6 +140,7 @@ img {
   width:100%;
   overflow:hidden;
   padding-top: 175px;
+
 }
 
 #iframeBody
@@ -137,25 +160,25 @@ img {
 
 
 .active {
-  border-left: 3px solid #1b2600 !important;
-  border-top: 3px solid #1b2600 !important;
-  border-bottom: 3px solid #1b2600 !important; 
+  border-left: 3px solid #003366 !important;
+  border-top: 3px solid #003366 !important;
+  border-bottom: 3px solid #003366 !important; 
 }
 
 .active:last-child
 {
-  border-right: 3px solid #1b2600 !important;
+  border-right: 3px solid #003366 !important;
 }
 
 .inactive {
-  border-left: 3px solid #1b2600 !important;
-  border-top: 3px solid #1b2600 !important;
-  border-bottom: 3px solid #1b2600 !important;
+  border-left: 3px solid #003366 !important;
+  border-top: 3px solid #003366 !important;
+  border-bottom: 3px solid #003366 !important;
 }
 
 .inactive:last-child
 {
-  border-right: 3px solid #1b2600 !important;
+  border-right: 3px solid #003366 !important;
 }
 
 .topsub
@@ -169,19 +192,60 @@ img {
 
 .dropdown-menu .inactive
 {
-  border-right: 3px solid #1b2600 !important;
+  border-right: 3px solid #003366 !important;
 }
 
-/*orange*/
+@media (max-width: 767px) {
+  .active {
+    border-left: 3px solid #003366 !important;
+    border-top: 3px solid #003366 !important;
+    border-right: 3px solid #003366 !important;
+    border-bottom: 0px !important;
+  }
+
+  .active:last-child
+  {
+    border-bottom: 3px solid #003366 !important;
+  }
+
+  .inactive {
+    border-left: 3px solid #003366 !important;
+    border-top: 3px solid #003366 !important;
+    border-right: 3px solid #003366 !important;
+    border-bottom: 0px !important;
+  }
+
+  .inactive:last-child
+  {
+    border-bottom: 3px solid #003366 !important;
+  }
+
+  .topsub
+  {
+    margin-top: -1px;
+  }
+  .subsub
+  {
+    margin-top: -3px;
+  }
+
+  .dropdown-menu .inactive
+  {
+    border-right: 0px !important;
+    border-left: 0px !important;
+  }
+}
+
+/*bleu*/
 .red
 {
-  background-color: #dd4f0d;
+  background-color: #0099ff;
 }
 
 /*jaune*/
 .pink
 {
-  background-color: #dfb81d;
+  background-color: #ffcc00;
   color: white;
 }
 
@@ -192,16 +256,13 @@ img {
   color: white;
 }
 
-.site-container
-{
-  margin: 0 5px;
-}
+
 
 .separator
 {
   width:90%;
-  border-top: 3px solid #dfb81d;
-  border-bottom: 3px solid #dd4f0d;
+  border-top: 3px solid #ffcc00;
+  border-bottom: 3px solid #0099ff;
   margin-bottom: 30px;
   padding: 0;
   height: 15px;
@@ -218,7 +279,7 @@ img {
 /*INDEX RIGHT SECTION*/
 .rightSectionTitle
 {
-  color: #1b2600;
+  color: #003366;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 30px;
@@ -234,7 +295,7 @@ img {
   border: 2px solid white;
   text-align: center;
   word-wrap:normal; 
-  background-color: #1b2600;
+  background-color: #003366;
   padding: 1px;
 }
 
@@ -242,7 +303,7 @@ img {
 {
   margin-top: 0;
   padding-top: 10px;
-  border-top: 3px solid #1b2600
+  border-top: 3px solid #003366
 }
 
 .box-inner > p
@@ -262,7 +323,7 @@ img {
 .texteInfo
 {
   max-width: 90% !important;
-  border: 3px solid #1b2600 !important;
+  border: 3px solid #003366 !important;
   margin-bottom: 40px;
 }
 
@@ -271,9 +332,9 @@ img {
 /* IFRAME */
 .iframe-title-bg
 {
-  color: #1b2600;
-  border-top: 3px solid #dfb81d;
-  border-bottom: 3px solid #dd4f0d;
+  color: #003366;
+  border-top: 3px solid #ffcc00;
+  border-bottom: 3px solid #0099ff;
   margin: 46px 0 46px;
   padding: 0;
   height: 15px;
@@ -287,7 +348,7 @@ img {
   position: relative;
   top: -18px;
   padding: 1px 20px;
-  background: #FCF9EB;
+  background: #beffbe;
 }
 
 .iframe-p-text
@@ -305,14 +366,14 @@ img {
 
 .iframe-div-title
 {
-  color: #1b2600;
+  color: #003366;
   font-size: 20px;
   font-weight: bold;
 }
 
 .iframe-div-subtitle
 {
-  color: #dd4f0d;
+  color: #0099ff;
   font-size: 16px;
 }
 
@@ -335,7 +396,7 @@ img {
 .small-height > ul
 {
   margin-left:-6px;
-  color: #1b2600;
+  color: #003366;
   font-size: 14px;
   font-weight: bold;
 }
@@ -407,8 +468,8 @@ img {
 
 .frame
 {
-  border: 2px solid #1b2600 !important;
-  /*border: 3px solid #1b2600 !important;*/
+  border: 2px solid #003366 !important;
+  /*border: 3px solid #003366 !important;*/
   padding: 15px;
   background-color: #EDDA85;
 }

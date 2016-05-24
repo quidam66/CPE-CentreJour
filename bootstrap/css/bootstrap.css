@@ -1586,7 +1586,7 @@ pre code {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  /*margin-left: auto;*/
+  margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
@@ -3554,7 +3554,7 @@ tbody.collapse.in {
 }
 .dropdown-menu > li > a {
   display: block;
-  padding: 10px 20px 10px 3px;
+  padding: 10px 20px 10px 10px;
   clear: both;
  
   line-height: 1.42857143;
@@ -4366,6 +4366,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
+    color: #FFFFFF;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -4500,7 +4501,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #FCF9EB;
+  background-color: #beffbe;
   /*background-color: #f8f8f8;*/
   /*border-color: #e7e7e7;*/
   margin-right: 15px;
@@ -4519,13 +4520,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default .navbar-nav > li > a {
+  /*color: #b3d9ff;*/
   color: #FFFFFF;
   font-size: 18px;
-  font-style: bold;
+  font-weight: bold;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #d2dde2;
+  color: #003366;
   background-color: transparent;
 }
 
@@ -4567,18 +4569,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
+    color: #FFF;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
+    color: #003366;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555;
+    color: #003366;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
