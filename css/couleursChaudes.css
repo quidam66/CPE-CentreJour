@@ -84,7 +84,7 @@ img {
 @media (max-width: 767px) {
   #cpe-header {
     font-size: 45px;
-    margin-top: 80px;
+    margin-top: 10px;
     margin-left: 80px;
   }
 }
@@ -104,12 +104,13 @@ img {
   height: 150px;
 }
 
-/*@media (max-width: 767px) {
+@media (max-width: 767px) {
   #logoCPE
   {
-
+    background-size: 80px 70px;
+    height: 70px;
   }
-}*/
+}
 
 .wraper-container
 {
@@ -489,4 +490,49 @@ img {
 {
   color: #222222;
   font-size: 14px;
+}
+
+table
+{
+  width:75%;
+  margin: auto;
+}
+
+@media (max-width: 767px) {
+  table
+  {
+    width: 0;
+    /*margin: auto;*/
+  }
+}
+
+table, td
+{
+  color: #003366;
+  border: 1px solid #003366;
+  border-collapse: collapse;
+}
+
+th 
+{
+  border: 3px solid #003366;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+td
+{
+    font-size: 12px;
+    padding: 5px;
+}
+
+th{
+    padding: 10px;
+}
+
+.first-column
+{
+  font-size: 16px;
+  font-weight: bold;
 }
