@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background: #beffbe;
+  background: #FDE9D9;
   color: #222222;
   cursor: auto;
   font-family: "Montserrat", sans-serif;
@@ -37,21 +37,11 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
+.bold
+{
+  font-weight: bold;
+}
 
-
-/*.myIframe {
-  width: 100%;
-  height: 100%;
-  border: solid black 1px;
-} 
-.myIframe iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-}*/
 .page{
   max-height: 100% !important;
   overflow-x: hidden; 
@@ -60,7 +50,7 @@ img {
 
 .site-header {
   /*border: solid green 1px;*/
-  background-color: #beffbe;
+  background-color: #FDE9D9;
   position: absolute;
   top: 0;
   left: 0;
@@ -123,14 +113,14 @@ img {
   /*border: solid yellow 1px;*/
   /*margin-right: 15px;*/
   /*margin: 0 5px;*/
-  background-color: #beffbe;
+  background-color: #FDE9D9;
   width:75%;
   margin: auto;
 }
 
 .site-footer {
   height: 40px;
-  background-color: #beffbe;
+  background-color: #FDE9D9;
   width:75%;
   margin: auto;
   /*border: solid black 1px;*/
@@ -349,7 +339,7 @@ img {
   position: relative;
   top: -18px;
   padding: 1px 20px;
-  background: #beffbe;
+  background: #FDE9D9;
 }
 
 .iframe-p-text
@@ -383,6 +373,11 @@ img {
   font-size: 12px;
   text-align: justify;
   margin: 0 20px;
+}
+
+.center-title
+{
+  text-align: center;
 }
 
 .ca-member{
