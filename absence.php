@@ -15,71 +15,71 @@
 </head>
 <body id="iframeBody">
 	<div class="container">
-		<div>
-			<div class="iframe-p-text">
-				<form id="formulaire" name="formulaire" action="includes/contacts.php" method="POST">
-					<br>
-					<br>
-					  <table border="0" cellpadding="0" cellspacing="0">
-					  		  <!--Nom -->
-					          <tbody><tr>
-					            <td class="libelle" align="left" height="15" valign="top"> 			
-		            				Votre nom:&nbsp;
-								</td>
-							  </tr>
-							  <tr>
-					            <td align="left" height="30" valign="top"> 			
-		            				<input class="input" id="nom" name="nom" size="42" maxlength="50" type="text">
-								</td>						
-							  </tr>
-							  
-					  		  <!--Courriel -->					  
-					          <tr>
-					            <td class="libelle" align="left" height="15" valign="top"> 			
-		            				Votre courriel:&nbsp;
-								</td>
-							  </tr>
-							  <tr>
-					            <td align="left" height="30" valign="top"> 			
-		            				<input class="input" id="courriel" name="courriel" size="42" maxlength="50" type="text">
-								</td>						
-							  </tr>		
-							  
-							  <!--Sujet -->					  
-					          <tr>
-					            <td class="libelle" align="left" height="15" valign="top"> 			
-		            				Sujet:&nbsp;
-								</td>
-							  </tr>
-							  <tr>
-					            <td align="left" height="30" valign="top"> 			
-		            				<input class="input" id="sujet" name="sujet" size="42" maxlength="50" type="text">
-								</td>						
-							  </tr>			  		  
-							  
-					  		  <!--Message -->					  
-					          <tr>
-					            <td class="libelle" align="left" height="15" valign="top"> 			
-		            				Votre message:&nbsp;
-								</td>
-							  </tr>
-							  <tr>
-					            <td align="left" height="250" valign="top"> 
-					            	<textarea id="message" name="message" value="" rows="18" cols="40"></textarea>
-								</td>						
-							  </tr>	
-							  
-					  		  <!--Soumettre -->					  
-					          <tr>			           
-					            <td align="right" height="25" valign="top">
-					            	<input value="Envoyer" onclick="submitform()" type="button">
-									<input id="multi" name="multi" size="40" maxlength="40" value="1" type="hidden">
-									<input id="cc" name="cc" size="40" maxlength="40" value="1" type="hidden">
-								</td>						
-							  </tr>	
+		<div class="iframe-p-text">
+			<div class="iframe-title-bg samll-height"><span>Votre enfant sera absent</span></div>
+
+					<form id="formulaire" name="formulaire" action="" method="POST">
+						<div class="form-label">Votre nom:&nbsp;</div>
+						<div>
+							<input class="input form-input" id="nom" name="nom" size="42" maxlength="50" type="text">
+						</div>
+						<div class="form-label">Le nom de votre/vos enfant(s):&nbsp;</div>
+						<div>
+							<input class="input form-input" id="enfant" name="enfant" size="42" maxlength="100" type="text">
+						</div>
+						<div class="form-label">Votre courriel:&nbsp;</div>
+						<div>
+							<input class="input form-input" id="courriel" name="courriel" size="42" maxlength="50" type="text">
+						</div>
+						<div class="form-label">Raison(s) de l'absence:&nbsp;</div>
+						<div>
+							<textarea id="message form-input" name="message" value="" rows="10" cols="66"></textarea>
+						</div>
+						<div>
+						  	<button type="button submit" class="btn btn-primary">Envoyer</button>
+						</div>
+			    	</form>
+
+			    	<?php
+					//=====Création du header de l'e-mail
+					$header = "MIME-Version: 1.0\r\n";
+					$header .= 'From: "CPE-CentreJour"<receprtion@cpecentrejour.com>'."\n";
+					$header .= 'Content-Type: text/html; charset="utf-8"'."\n";
+					$header .= 'Content-Transfert-Encoding: 8bit';
 					
-					           
-		  		</tbody></table>
-		      </form>
+					
+					//=========
+			    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['enfant']) && !empty($_POST['message']))
+			    		{
+			    			extract($_POST);
+			    			$destinataire = 'quidam66@gmail.com';
+			    			$expediteur = $nom.'<' .$courriel.'>';
+			    			$sujet = 'Enfant absent: '.$enfant;
+			    			$message = $enfant. ' sera absent(e): '."\r\n";
+			    			$message .= $_POST['message'];
+			    			$mail = mail($destinataire, $sujet, $message, $header);
+
+			    			if($mail)echo'Courriel envoye avec succes';else echo'Echec envoi courriel';
+			    		}
+			    		else
+			    		{
+			    			if(empty($_POST['nom']))
+			    			{
+			    				echo 'Entrez votre nom s\'il vous plaît';
+			    			}
+			    			else if (empty($_POST['enfant']))
+			    			{
+			    				echo 'Entrez le nom de votre/vos enfant(s) s\'il vous plaît';
+			    			}
+			    			else if(empty($_POST['message']))
+			    			{
+			    				echo 'Entrez un message s\'il vous plaît';
+			    			}
+			    		}
+			    	?>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
