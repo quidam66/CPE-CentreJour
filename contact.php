@@ -15,7 +15,19 @@
 </head>
 <body id="iframeBody">
 	<div class="container">
-		<div class="iframe-title-bg samll-height"><span>Nous joindre</span></div>
+		<!-- <div class="iframe-title-bg samll-height"></div> -->
+
+		<div class="iframe-title-bg samll-height">
+			<div class="title-text-container">
+				<span class="petite-fleur"></span>
+					<span class="title-text">Nous joindre</span>
+				<span class="petite-fleur"></span>
+			</div>
+		</div>
+
+		<!-- <div class="petite-fleur-1"></div> -->
+
+
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<div><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2732.4248319301705!2d-71.2773441976227!3d46.7762325970135!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896c8c6d7e171%3A0xd317276e2e7b619!2sCentre+de+la+petite+enfance+Centre+Jour!5e0!3m2!1sfr!2sca!4v1464471530429" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
