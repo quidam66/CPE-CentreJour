@@ -125,9 +125,9 @@ function resizeIframe()
 	//$(".index_ifrm").css("height", infoH);
 	//$(".site-footer").css("bottom", 10);
 
-	//console.log($(".index_ifrm").contents().outerHeight());
+	console.log($(".index_ifrm").contents().outerHeight());
 	$(".index_ifrm").css("height", 0);
-	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 275);		
+	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75);		
 
 };
 
@@ -136,5 +136,5 @@ $("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleu
 
 //$(".index_ifrm").onLoad = resizeIframe;
 //maframe.onLoad = resizeIframe();
-//window.onresize = resizeIframe; 
+window.onresize = resizeIframe; 
 

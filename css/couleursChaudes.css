@@ -9,10 +9,10 @@ html {
 html,
 body {
   font-size: 100%;
+
 }
 
 body {
-  background: #FDE9D9;
   color: #222222;
   cursor: auto;
   font-family: "Montserrat", sans-serif;
@@ -20,8 +20,21 @@ body {
   font-weight: normal;
   line-height: 1.5;
   margin: 0;
-  padding: 0;
   position: relative;
+}
+
+#index_body
+{
+  padding-top: 206px;
+  /*padding-bottom: 100px;*/
+}
+
+@media (max-width: 767px) {
+  #index_body
+  {
+    padding-top: 125px;
+    /*padding-bottom: 50px;*/
+  }
 }
 
 a:hover {
@@ -43,6 +56,10 @@ img {
 }
 
 .page{
+  background: #FDE9D9;
+/*  background-image: url("../images/fleursFooter2.png");
+  background-repeat: no-repeat;*/
+  background-position: bottom;
   max-height: 100% !important;
   overflow-x: hidden; 
   /*border: solid red 1px;*/
@@ -55,8 +72,6 @@ img {
   top: 0;
   left: 0;
   width:90%;
-  margin-right: 16px;
-  height: 185px;
 }
 
 #cpe-header
@@ -113,24 +128,42 @@ img {
   /*border: solid yellow 1px;*/
   /*margin-right: 15px;*/
   /*margin: 0 5px;*/
-  background-color: #FDE9D9;
+/*  background-color: #FDE9D9;*/
   width:75%;
   margin: auto;
 }
 
+.main-background
+{
+  background-image: url("../images/fleurs.png");
+  background-repeat: no-repeat; 
+  width: 100%
+}
+
 .site-footer {
-  height: 40px;
+/*  position: fixed;
+  left: 0;
+  bottom: 0;*/
+  height: 100px;
   background-color: #FDE9D9;
-  width:75%;
-  margin: auto;
-  /*border: solid black 1px;*/
+  background-image: url("../images/fleursFooter3.png");
+  /*background-repeat: no-repeat;*/
+  width:100%;
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    max-width: 100%;
+    height: 50px;
+   /* background-size: 50% 50%;*/
+  }
 }
 
 .index_ifrm {
   /*max-height:100% !important;*/
   width:100%;
   overflow:hidden;
-  padding-top: 175px;
+  /*padding-top: 175px;*/
 
 }
 
