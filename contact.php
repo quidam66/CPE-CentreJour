@@ -16,14 +16,14 @@
 <body id="iframeBody">
 	<div class="container">
 		<!-- <div class="iframe-title-bg samll-height"></div> -->
-
-		<div class="iframe-title-bg samll-height">
+		<div class="iframe-title-bg samll-height"><span>Nous joindre</span></div>
+		<!-- <div class="iframe-title-bg samll-height">
 			<div class="title-text-container">
-				<span class="petite-fleur"></span>
+				<span class="petite-fleur fleur-left"></span>
 					<span class="title-text">Nous joindre</span>
-				<span class="petite-fleur"></span>
+				<span class="petite-fleur fleur-right"></span>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- <div class="petite-fleur-1"></div> -->
 

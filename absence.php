@@ -17,7 +17,9 @@
 	<div class="container">
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg samll-height"><span>Votre enfant sera absent</span></div>
-
+				<p>
+					<img class="align-right" src="images/enfants.png" style="width: 450px; height:400px"></img>
+				</p>
 					<form id="formulaire" name="formulaire" action="" method="POST">
 						<div class="form-label">Votre nom:&nbsp;</div>
 						<div>

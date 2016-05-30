@@ -80,15 +80,14 @@ img {
   font-family: 'Clicker Script', cursive;
   font-weight: bold;
   font-size: 60px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 30px;
   width:68%;
   margin: auto;
 }
 
 @media (max-width: 767px) {
   #cpe-header {
-    font-size: 45px;
+    font-size: 36px;
     margin-top: 10px;
     margin-left: 80px;
   }
@@ -365,7 +364,7 @@ img {
   text-align: center;
 }
 
-/*.iframe-title-bg > span
+.iframe-title-bg > span
 {
   font-size: 30px;
   font-weight: bold;
@@ -373,22 +372,6 @@ img {
   top: -18px;
   padding: 1px 20px;
   background: #FDE9D9;
-}*/
-
-.title-text-container
-{
-  /*position: relative;
-  top: -18px;*/
-
-  padding: 1px 20px;
-  background: #FDE9D9;
-}
-
-.title-text
-{
-  display: inline;
-  font-size: 30px;
-  font-weight: bold;
 }
 
 .iframe-p-text
@@ -601,12 +584,27 @@ th{
   font-weight: bold;
 }
 
-.petite-fleur
+img.align-right
 {
-  border: 2px solid #003366 !important;
-  background: url("../images/flower_1.png") center no-repeat;
-  display: inline-block;
-  background-size: 100% 100%;
-  height: 70px;
-  width: 30px;
+  margin: 2px 2px 10px 10px;
+}
+
+.align-right
+{
+  float: right;
+}
+
+.align-center
+{
+  filter:alpha(opacity=25);
+  opacity: 0.25;
+  -moz-opacity:0.25;
+}
+
+.employes-container
+{
+  position: absolute;
+  top:0;
+  width: 93%;
+
 }
