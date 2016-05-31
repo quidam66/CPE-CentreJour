@@ -3557,18 +3557,14 @@ tbody.collapse.in {
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-  /*color: #262626;
-  text-decoration: none;
-  background-color: #f5f5f5;*/
-
-  color: #d2dde2;
+  color: #003366;
   text-decoration: none;
   background: transparent;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  color: #fff;
+  color: #003366;
   text-decoration: none;
   outline: 0;
 }
@@ -4525,7 +4521,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  /*color: #555;*/
+  color: #003366;
   /*background-color: #e7e7e7;*/
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -4551,7 +4547,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #FFF;
+  color: #003366;
   background-color: transparent;
 }
 @media (max-width: 767px) {

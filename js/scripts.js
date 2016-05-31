@@ -1,47 +1,6 @@
 "use strict";
 
 var _subItemSelected = false;
-// Foundation JavaScript
-// Documentation can be found at: http://foundation.zurb.com/docs
-$(document).foundation;
-
-var ph = {
-
-	init: function(){
-	
-		$(document).ready(function(){
-		
-			ph.mainSlider.init();
-		});
-	},
-	
-	mainSlider: {
-	
-		init: function(){
-		
-			var $sliders = $('.main-slider');
-			
-			$sliders.each(function(){
-			
-				var $slider = $(this);
-				
-				$slider.slick({
-					dots: false,
-					arrows: true,
-					infinite: true,
-					appendArrows: $slider.parent().find('.main-slider-arrows >  .arrow-holder'),
-					prevArrow: '<a href="" class="slick-prev"></a>',
-					nextArrow: '<a href="" class="slick-next"></a>',
-					speed: 300,
-					slidesToShow: 1,
-					slidesToScroll: 1
-				});
-			});
-		}
-	}
-}
-
-ph.init();
 
 $(".nav a").on("click", function(){
 
@@ -60,6 +19,7 @@ $(".nav a").on("click", function(){
 		{
 			console.log("dans le ELSE IF du IF");
 			$(this).parent().removeClass("active");
+			$(this).parent().removeClass("selected");
 			
 		}
 		else
@@ -83,7 +43,8 @@ $(".nav a").on("click", function(){
 				
 			}
 			$(this).parent().addClass("active");
-			$(this).parent().parent().parent().addClass("selected");
+			//$(this).parent().parent().parent().removeClass("selected");
+			$(".dropdown").addClass("selected");
 			_subItemSelected = true;
 		}
 		else
@@ -91,6 +52,7 @@ $(".nav a").on("click", function(){
 			console.log("dans le ELSE du ELSE");
 			$(".nav").find(".active").addClass("inactive");
 			$(".nav").find(".active").removeClass("active");
+			$(".nav").find(".selected").removeClass("selected");
 			
 			$(this).parent().removeClass("inactive");
 			$(this).parent().addClass("active");
