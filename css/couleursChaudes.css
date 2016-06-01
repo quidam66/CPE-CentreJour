@@ -31,7 +31,7 @@ body {
 @media (max-width: 767px) {
   #index_body
   {
-    padding-top: 125px;
+    padding-top: 145px;
   }
 }
 
@@ -326,6 +326,14 @@ img {
   background: #FDE9D9;
 }
 
+@media (max-width: 767px){
+  .iframe-title-bg > span
+  {
+    font-size: 18px;
+    top: -9px;
+  }
+}
+
 .iframe-p-text
 {
   text-align: justify;
@@ -376,7 +384,7 @@ img {
 .small-height > ul
 {
   margin-left:-6px;
-  color: #003366;
+  /*color: #003366;*/
   font-size: 14px;
   font-weight: bold;
 }

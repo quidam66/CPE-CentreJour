@@ -22,10 +22,10 @@
 				<div class="texteInfo">
 					<div class="box-title">Infos</div>
 					<div class="box-inner">
-						<div class="glyphicon glyphicon-earphone"><span>Téléphone:</span></div>
+						<p>Téléphone:</p>
 						<p> (418) 656-2131 poste: 5430</p>
 						<div class="small-height"></div>
-						<p>Horaire</p>
+						<p>Horaire:</p>
 						<p>Lundi au vendredi</p>
 						<p>7h00 - 18h00</p>
 					</div> 
@@ -57,7 +57,8 @@
 		    	<?php
 				//=====Création du header de l'e-mail
 				$header = "MIME-Version: 1.0\r\n";
-				$header .= 'From: "CPE-CentreJour"<receprtion@cpecentrejour.com>'."\n";
+				$header .= 'From: "CPE-CentreJour"<reception@cpecentrejour.com>'."\n";
+				//$header .= 'From: "CPE-CentreJour"<quidam66@gmail.com>'."\n";
 				$header .= 'Content-Type: text/html; charset="utf-8"'."\n";
 				$header .= 'Content-Transfert-Encoding: 8bit';
 				
@@ -66,7 +67,7 @@
 		    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['sujet']) && !empty($_POST['message']))
 		    		{
 		    			extract($_POST);
-		    			$destinataire = 'quidam66@gmail.com';
+		    			$destinataire = 'reception@cpecentrejour.com';
 		    			$expediteur = $nom.'<' .$courriel.'>';
 		    			$mail = mail($destinataire, $sujet, $message, $header);
 		    			//$mail = mail('archiedenis@hotmail.com', '$sujet', '$message', 'hotmail.com');
