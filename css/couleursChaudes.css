@@ -149,11 +149,6 @@ img {
   overflow:hidden;
 }
 
-.penis
-{
-  color: #003366;
-}
-
 .active
 {
   border-left: 3px solid #003366 !important;
@@ -566,4 +561,43 @@ img.align-right
   top:0;
   width: 93%;
 
+}
+
+.login-form
+{
+  width:75%;
+  margin: auto;
+}
+
+.error-connexion
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.txt-logout
+{
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top:300px;
+  right:400px;
+}
+
+.private-site-footer {
+  height: 100px;
+  background-color: #FDE9D9;
+  background-image: url("../images/fleursFooter3.png");
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+  width:150%;
+}
+
+.login-page
+{
+  background-color: #FDE9D9;
+  max-height: 100% !important;
+  overflow-x: hidden;
+  height: 100%;
 }

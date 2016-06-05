@@ -1,0 +1,7 @@
+AuthUserFile "/.htpasswd"
+
+AuthName "Acces restreint"
+
+AuthType Basic
+
+Require valid-user
