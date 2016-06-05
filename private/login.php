@@ -24,7 +24,7 @@
          //$_SESSION['name'] = $name;
          $_SESSION['login_user'] = $myusername;
          
-         header("location: Http://localhost/CentreJour/private/welcome.php");
+         header("location: welcome.php");
       }else {
          $error = "Votre nom d'utilisateur ou votre mot de passe est refusé";
       }
