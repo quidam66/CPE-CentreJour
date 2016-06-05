@@ -601,3 +601,37 @@ img.align-right
   overflow-x: hidden;
   height: 100%;
 }
+
+.message-form
+{
+  margin: 30px;
+}
+
+.iframe-title-bg-warning
+{
+  color: #003366;
+  border-top: 3px solid red;
+  border-bottom: 3px solid red;
+  margin: 46px 0 46px;
+  padding: 0;
+  height: 15px;
+  text-align: center;
+}
+
+.iframe-title-bg-warning > span
+{
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  top: -18px;
+  padding: 1px 20px;
+  background: #FDE9D9;
+}
+
+.warning-text
+{
+  color: red;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
