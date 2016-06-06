@@ -1,0 +1,6 @@
+connexion FTP serveur CPE centre jour
+URL: 204.191.10.17
+username: cpecentrejourcom
+password: c$7+76a
+port: 990
+TLS explicite
