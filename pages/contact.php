@@ -68,7 +68,7 @@
 						$to = "CPE Centre Jour <quidam66@gmail.com>";
 						$subject = $_POST['sujet'];
 						$body = $_POST['message'];
-						$host = "host";
+						$host = "pop.logicielsdavos.ca";
 
 						$username = "reception@cpecentrejour.com";
 						$password = "22X6503U";
