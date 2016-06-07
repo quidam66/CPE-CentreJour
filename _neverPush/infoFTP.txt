@@ -4,3 +4,10 @@ username: cpecentrejourcom
 password: c$7+76a
 port: 990
 TLS explicite
+
+
+MySQL
+URL      : http://www.cpecentrejour.com/gdddbmgr/
+BD       : Davos_CPECentreJour
+User     : Davos_CPECentreJ
+Password : U7UHsbKPfuUyteH6
