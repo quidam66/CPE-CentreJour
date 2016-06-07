@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playhouse</title>
+    <title>CPE Centre Jour</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 
@@ -55,24 +55,43 @@
 		    	</form>
 
 		    	<?php
-				//=====Création du header de l'e-mail
-				$header = "MIME-Version: 1.0\r\n";
-				$header .= 'From: "CPE-CentreJour"<reception@cpecentrejour.com>'."\n";
-				//$header .= 'From: "CPE-CentreJour"<quidam66@gmail.com>'."\n";
-				$header .= 'Content-Type: text/html; charset="utf-8"'."\n";
-				$header .= 'Content-Transfert-Encoding: 8bit';
-				
-				
-				//=========
+					require_once "Mail.php";
+
 		    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['sujet']) && !empty($_POST['message']))
 		    		{
-		    			extract($_POST);
-		    			$destinataire = 'reception@cpecentrejour.com';
-		    			$expediteur = $nom.'<' .$courriel.'>';
-		    			$mail = mail($destinataire, $sujet, $message, $header);
-		    			//$mail = mail('archiedenis@hotmail.com', '$sujet', '$message', 'hotmail.com');
+						$nom = $_POST['nom'];
+						$courriel = $_POST['courriel'];
 
-		    			if($mail)echo'Courriel envoye avec succes';else echo'Echec envoi courriel';
+
+						$from = $nom.'<'.$courriel.'>';
+						//$to = "CPE Centre Jour <destinataire@domaine.com>";
+						$to = "CPE Centre Jour <quidam66@gmail.com>";
+						$subject = $_POST['sujet'];
+						$body = $_POST['message'];
+						$host = "host";
+
+						$username = "reception@cpecentrejour.com";
+						$password = "22X6503U";
+						$headers = array ('From' => $from,
+						                  'To' => $to,
+						                  'Subject' => $subject);
+						$smtp = Mail::factory('smtp',
+						                      array ('host' => $host,
+						                             'auth' => true,
+						                             'username' => $username,
+						                             'password' => $password));
+
+						                             
+						$mail = $smtp->send($to, $headers, $body);
+						 
+						if (PEAR::isError($mail))
+						{
+						    echo("<p>" . $mail->getMessage() . "</p>");
+						} 
+						else 
+						{
+						   echo("<p>Message successfully sent!</p>");
+						}
 		    		}
 		    		else
 		    		{
@@ -89,6 +108,10 @@
 		    				echo 'Entrez un message s\'il vous plaît';
 		    			}
 		    		}
+
+
+
+
 		    	?>
 			</div>
 		</div>
