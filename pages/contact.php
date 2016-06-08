@@ -57,15 +57,15 @@
 		    	<?php
 					require_once "Mail.php";
 
-		    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['sujet']) && !empty($_POST['message']))
+		    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['courriel']) && !empty($_POST['sujet']) && !empty($_POST['message']))
 		    		{
 						$nom = $_POST['nom'];
 						$courriel = $_POST['courriel'];
 
 
 						$from = $nom.'<'.$courriel.'>';
-						//$to = "CPE Centre Jour <destinataire@domaine.com>";
-						$to = "CPE Centre Jour <quidam66@gmail.com>";
+						$to = "CPE Centre Jour <reception@cpecentrejour.com>";
+						//$to = "CPE Centre Jour <quidam66@gmail.com>";
 						$subject = $_POST['sujet'];
 						$body = $_POST['message'];
 						$host = "pop.logicielsdavos.ca";
@@ -103,15 +103,15 @@
 		    			{
 		    				echo 'Entrez votre le sujet de votre courriel s\'il vous plaît';
 		    			}
+		    			else if (empty($_POST['courriel']))
+		    			{
+		    				echo 'Entrez votre courriel s\'il vous plaît';
+		    			}
 		    			else if(empty($_POST['message']))
 		    			{
 		    				echo 'Entrez un message s\'il vous plaît';
 		    			}
 		    		}
-
-
-
-
 		    	?>
 			</div>
 		</div>
