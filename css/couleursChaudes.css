@@ -474,11 +474,6 @@ img {
   font-size: 14px;
 }
 
-table
-{
-  width:75%;
-  margin: auto;
-}
 
 @media (max-width: 767px) {
   table
@@ -509,7 +504,8 @@ td
 }
 
 th{
-    padding: 10px;
+  padding: 10px;
+  width: 110px;
 }
 
 .first-column
@@ -594,7 +590,7 @@ img.align-right
   width:150%;
 }
 
-.login-page
+.private-page
 {
   background-color: #FDE9D9;
   max-height: 100% !important;

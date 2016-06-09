@@ -14,7 +14,7 @@
    <script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
    <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
-<body class="login-page">
+<body class="private-page">
 	<div class="container">
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg"><span>Bienvenue <?php echo $login_session; ?></span></div>
@@ -24,7 +24,7 @@
 		</div>         
 	</div>
 
-	<div class="txt-logout"><a href="../index.html">Déconnexion</a></div>
+	<div class="txt-logout"><a href="logout.php">Déconnexion</a></div>
 
 	<div class="private-site-footer">
 	</div> 

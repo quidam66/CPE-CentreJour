@@ -93,6 +93,11 @@ function resizeIframe()
 
 };
 
+function goBack()
+{
+	window.history.back();
+};
+
 /*$("#css1").click(function() { $("link[rel=stylesheet]").attr({href : "css/style.css"}); }); 
 $("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleursChaudes.css"}); });*/
 

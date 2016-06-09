@@ -49,10 +49,11 @@
 					<div>
 						<textarea id="message form-input" name="message" value="" rows="10" cols="66"></textarea>
 					</div>
+					<div class="small-height"></div>
 					<div>
 					  	<button type="button submit" class="btn btn-primary">Envoyer</button>
 					</div>
-		    	</form>
+
 
 		    	<?php
 					require_once "Mail.php";
@@ -65,10 +66,9 @@
 
 						$from = $nom.'<'.$courriel.'>';
 						$to = "CPE Centre Jour <reception@cpecentrejour.com>";
-						//$to = "CPE Centre Jour <quidam66@gmail.com>";
 						$subject = $_POST['sujet'];
 						$body = $_POST['message'];
-						$host = "pop.logicielsdavos.ca";
+						$host = "pop.logicielsdavos.com";
 
 						$username = "reception@cpecentrejour.com";
 						$password = "22X6503U";
@@ -90,29 +90,30 @@
 						} 
 						else 
 						{
-						   echo("<p>Message successfully sent!</p>");
+						   echo("<div><p>Votre courriel a été envoyé au CPE Centre Jour</p></div>");
 						}
 		    		}
 		    		else
 		    		{
 		    			if(empty($_POST['nom']))
 		    			{
-		    				echo 'Entrez votre nom s\'il vous plaît';
+		    				echo("<div><p>Entrez votre nom s'il vous plaît</p></div>");
 		    			}
 		    			else if (empty($_POST['sujet']))
 		    			{
-		    				echo 'Entrez votre le sujet de votre courriel s\'il vous plaît';
+		    				 echo("<div><p>Entrez votre le sujet de votre courriel s'il vous plaît</p></div>");
 		    			}
 		    			else if (empty($_POST['courriel']))
 		    			{
-		    				echo 'Entrez votre courriel s\'il vous plaît';
+		    				echo("<div><p>Entrez votre courriel s'il vous plaît</p></div>");
 		    			}
 		    			else if(empty($_POST['message']))
 		    			{
-		    				echo 'Entrez un message s\'il vous plaît';
+		    				echo("<div><p>Entrez un message s'il vous plaît</p></div>");
 		    			}
 		    		}
 		    	?>
+		    	</form>
 			</div>
 		</div>
 	</div>

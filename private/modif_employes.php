@@ -41,9 +41,10 @@
 	<link rel="stylesheet" href="../css/couleursChaudes.css">
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
+	<script src="../js/scripts.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
 </head>
-<body id="iframeBody">
+<body class="private-page">
 	<div class="container">
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg samll-height"><span>Liste des employés(ées)</span></div>
@@ -54,14 +55,19 @@
 					{
 					?>
 						<div>
-							<span class="form-label">ID:&nbsp;</span>
-							<span><?php echo $donnees['id']; ?></span>
+							<span class="form-label"><?php echo $donnees['id']; ?></span>
 							<span class="form-label">Prénom:&nbsp;</span>
-							<span><input class="input form-input" id="nom" name="nom" size="25" maxlength="50" type="text" value="<?php echo $donnees['prenom']; ?>"></span>
+							<span><input class="input form-input" id="nom" name="prenom" size="25" maxlength="50" type="text" value="<?php echo $donnees['prenom']; ?>"></span>
 							<span class="form-label">Nom:&nbsp;</span>
 							<span><input class="input form-input" id="nom" name="nom" size="25" maxlength="50" type="text" value="<?php echo $donnees['nom']; ?>"></span>
 							<span class="form-label">Poste:&nbsp;</span>
-							<span><input class="input form-input" id="nom" name="nom" size="25" maxlength="50" type="text" value="<?php echo $donnees['titre']; ?>"></span>
+							<span><input class="input form-input" id="nom" name="titre" size="25" maxlength="50" type="text" value="<?php echo $donnees['titre']; ?>"></span>
+							<span>
+						  	<button type="button submit" class="btn btn-success">Modifier</button>
+							</span>
+							<span>
+						  	<button type="button submit" class="btn btn-warning">Effacer</button>
+							</span>
 					    </div>
 	
 					    <!-- <p>
@@ -76,6 +82,10 @@
 				?>
 
 			</fomr>
+
+			<div>
+				<button class="btn btn-primary" onclick="goBack()">Retour</button>
+			</div>
 		</div>
 	</div>
 </body>

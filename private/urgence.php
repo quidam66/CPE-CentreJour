@@ -43,6 +43,7 @@
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
+	<script src="../js/scripts.js"></script>
 	<script type = "text/javascript" language = "javascript">
 		$(document).ready(function() {
            $.getJSON('message.json', function(jd) {
@@ -56,12 +57,13 @@
            		else
            		{
            			$('#json-texte').append('<p class="form-input">' + jd.message.texte + '</p>');
+           			$('.text').val(jd.message.texte);
            		}
            });
 		});	
 	</script>
 </head>
-<body class="login-page">
+<body class="private-page">
    <div class="container">
       <div class="iframe-p-text">
          <div class="iframe-title-bg"><span>Section réservée à l'administration</span></div>
@@ -79,7 +81,7 @@
 
 						<div class="form-label">Votre message:&nbsp;</div>
 						<div>
-							<textarea id="texte form-input" name="texte" value="" rows="3" cols="120"></textarea>
+							<textarea id="texte form-input" class="text" name="texte" value="" rows="3" cols="120"></textarea>
 						</div>
 						<div class="small-height"></div>
 						<div>
@@ -90,7 +92,9 @@
 			</div>
 		</div>
 	</div>
-
+	<div>
+		<button class="btn btn-primary" onclick="goBack()">Retour</button>
+	</div>
 	<div class="private-site-footer"></div> 
 </body>
 	

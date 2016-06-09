@@ -36,48 +36,71 @@
 						<div>
 							<textarea id="message form-input" name="message" value="" rows="10" cols="66"></textarea>
 						</div>
+						<div class="small-height"></div>
 						<div>
 						  	<button type="button submit" class="btn btn-primary">Envoyer</button>
 						</div>
+				    	<?php
+							require_once "Mail.php";
+							if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['courriel']) && !empty($_POST['enfant']) && !empty($_POST['message']))
+			    			{
+								$nom = $_POST['nom'];
+								$courriel = $_POST['courriel'];
+
+
+								$from = $nom.'<'.$courriel.'>';
+								$to = "CPE Centre Jour <reception@cpecentrejour.com>";
+								$subject = 'Enfant absent: '. $_POST['enfant'];
+								$body = $_POST['enfant']. ' sera absent(e): '."\r\n";
+			    				$body .= $_POST['message'];
+								
+								//$body = $_POST['message'];
+								$host = "pop.logicielsdavos.com";
+
+								$username = "reception@cpecentrejour.com";
+								$password = "22X6503U";
+								$headers = array ('From' => $from,
+								                  'To' => $to,
+								                  'Subject' => $subject);
+								$smtp = Mail::factory('smtp',
+								                      array ('host' => $host,
+								                             'auth' => true,
+								                             'username' => $username,
+								                             'password' => $password));
+
+								                             
+								$mail = $smtp->send($to, $headers, $body);
+								 
+								if (PEAR::isError($mail))
+								{
+								    echo("<p>" . $mail->getMessage() . "</p>");
+								} 
+								else 
+								{
+								   echo("<div><p>Votre courriel a été envoyé au CPE Centre Jour</p></div>");
+								}
+				    		}
+				    		else
+				    		{
+				    			if(empty($_POST['nom']))
+				    			{
+				    				echo("<div><p>Entrez votre nom s'il vous plaît</p></div>");
+				    			}
+				    			else if (empty($_POST['enfant']))
+				    			{
+				    				 echo("<div><p>Entrez votre le nom de votre/vos enfant(s) s'il vous plaît</p></div>");
+				    			}
+				    			else if (empty($_POST['courriel']))
+				    			{
+				    				echo("<div><p>Entrez votre courriel s'il vous plaît</p></div>");
+				    			}
+				    			else if(empty($_POST['message']))
+				    			{
+				    				echo("<div><p>Entrez un message s'il vous plaît</p></div>");
+				    			}
+				    		}
+				    	?>						
 			    	</form>
-
-			    	<?php
-					//=====Création du header de l'e-mail
-					$header = "MIME-Version: 1.0\r\n";
-					$header .= 'From: "CPE-CentreJour"<receprtion@cpecentrejour.com>'."\n";
-					$header .= 'Content-Type: text/html; charset="utf-8"'."\n";
-					$header .= 'Content-Transfert-Encoding: 8bit';
-					
-					
-					//=========
-			    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['enfant']) && !empty($_POST['message']))
-			    		{
-			    			extract($_POST);
-			    			$destinataire = 'quidam66@gmail.com';
-			    			$expediteur = $nom.'<' .$courriel.'>';
-			    			$sujet = 'Enfant absent: '.$enfant;
-			    			$message = $enfant. ' sera absent(e): '."\r\n";
-			    			$message .= $_POST['message'];
-			    			$mail = mail($destinataire, $sujet, $message, $header);
-
-			    			if($mail)echo'Courriel envoye avec succes';else echo'Echec envoi courriel';
-			    		}
-			    		else
-			    		{
-			    			if(empty($_POST['nom']))
-			    			{
-			    				echo 'Entrez votre nom s\'il vous plaît';
-			    			}
-			    			else if (empty($_POST['enfant']))
-			    			{
-			    				echo 'Entrez le nom de votre/vos enfant(s) s\'il vous plaît';
-			    			}
-			    			else if(empty($_POST['message']))
-			    			{
-			    				echo 'Entrez un message s\'il vous plaît';
-			    			}
-			    		}
-			    	?>
 				</div>
 			</div>
 		</div>

@@ -44,7 +44,7 @@
    <script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
    <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
-<body class="login-page">
+<body class="private-page">
    <div class="container">
       <div class="iframe-p-text">
          <div class="iframe-title-bg"><span>Section réservée à l'administration</span></div>
