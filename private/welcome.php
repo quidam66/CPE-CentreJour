@@ -19,7 +19,7 @@
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg"><span>Bienvenue <?php echo $login_session; ?></span></div>
 			
-			<div class="iframe-div-title small-height"><span><a href="modif_employes.php">Modifier la liste des employés (ées)</a></span></div>
+			<div class="iframe-div-title small-height"><span><a href="modif.php">Modifier la liste des employés (ées)</a></span></div>
 			<div class="iframe-div-title small-height"><span><a href="urgence.php">Ajouer un message sur la page d'accueil</a></span></div>
 		</div>         
 	</div>
