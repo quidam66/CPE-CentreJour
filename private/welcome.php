@@ -13,6 +13,7 @@
    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
    <script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
    <script src="../bootstrap/js/bootstrap.js"></script>
+   <script src="../js/scripts.js"></script>
 </head>
 <body class="private-page">
 	<div class="container">
@@ -21,13 +22,21 @@
 			
 			<div class="iframe-div-title small-height"><span><a href="modif.php">Modifier la liste des employés (ées)</a></span></div>
 			<div class="iframe-div-title small-height"><span><a href="urgence.php">Ajouer un message sur la page d'accueil</a></span></div>
-		</div>         
+			<button class="txt-logout btn btn-primary" onClick="logout()">Déconnexion</button>
+		</div>
+
 	</div>
 
-	<div class="txt-logout"><a href="logout.php">Déconnexion</a></div>
+	
 
-	<div class="private-site-footer">
-	</div> 
+	<script>
+		$(document).ready(function()
+		{
+			$(".private-site-footer").css({"position":"absolute"});
+			$(".private-site-footer").css({"bottom":"0px"});
+		});
+	</script>
+	<div class="private-site-footer"></div>
 </body>
    
 </html>

@@ -98,6 +98,17 @@ function goBack()
 	window.history.back();
 };
 
+function returnTo()
+{
+	$("head").append("<meta http-equiv='refresh' content='0;URL=../private/welcome.php'>");
+}
+
+function logout()
+{
+	console.log("in logout");
+	document.location.href='../private/logout.php';
+}
+
 /*$("#css1").click(function() { $("link[rel=stylesheet]").attr({href : "css/style.css"}); }); 
 $("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleursChaudes.css"}); });*/
 

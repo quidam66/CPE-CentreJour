@@ -1,99 +1,156 @@
-<html>
-<head>
-
-<style type="text/css">
-<!--
-.Style4 {font-size: 12px}
--->
-</style>
-</head>
-
-<body>
-<form id="form1" name="form1" method="post" action="code.php">
-  <table width="420" border="0">
-    <tr>
-      <td width="169" bgcolor="#CCFF00"><label>
-        <input name="rechercher" type="submit" id="rechercher" value="Rechercher" />
-      </label></td>
-      <td width="369" bgcolor="#CCFF00"><label>
-        <input name="t_rechercher" type="text" id="t_rechercher" />
-        <span class="Style4">Recherche par nom</span> </label></td>
-    </tr>
-    <tr>
-      <td>Nom</td>
-      <td><label>
-        <input name="t_nom" type="text" id="t_nom" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>Prénom</td>
-      <td><label>
-        <input name="t_prenom" type="text" id="t_prenom" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>Poste</td>
-      <td><label>
-        <input name="t_poste" type="text" id="t_poste" />
-      </label></td>
-    </tr>
-    <tr>
-      <td colspan="2"><label>
-        <input name="nouveau" type="reset" id="nouveau" value="Nouveau" />
-        <input name="ajouter" type="submit" id="ajouter" value="Ajouter" />
-        <input name="modifier" type="submit" id="modifier" value="Modifier" />
-        <input name="supprimer" type="submit" id="supprimer" value="Supprimer" />
-      </label></td>
-    </tr>
-  </table>
-  <p> </p>
-</form>
 <?php
-
-$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$reponse = $bdd->query('SELECT * FROM employes'); 
-//$req="select * from employes";
-/*mysql_query($req);
-$res=mysql_query($req,$cn);*/  
+    include('session.php');
 ?>
-<table width="630" align="left" bgcolor="#CCCCCC">
-<tr >
- 
-<td width="152">Nom</td>
-<td width="66">Prénom</td>
-<td width="248">Poste</td>
-</tr>
+<html class="no-js" lang="fr-CA">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CPE Centre Jour</title>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="../css/couleursChaudes.css" >
+	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
+	<script src="../bootstrap/js/bootstrap.js"></script>
+	<script src="../js/scripts.js"></script>
+</head>
+<body class="private-page">
+	<div class="iframe-title-bg"><span>Manipulation de la liste d'employés(ées)</span></div>
+	<div id="employe_form_container">
+		<form id="form1" name="form1" method="post" action="code.php">
+			<table>
+				<tr>
+					<td class="couleur-fond-td">
+						<label>
+							<input class='btn btn-success' name="rechercher" type="submit" id="rechercher" value="Rechercher" />
+						</label>
+					</td>
+					<td class="couleur-fond-td">
+						<label>
+							<input name="t_rechercher" type="text" id="t_rechercher" />
+							<span>Recherche par numero d'identifiant</span>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>ID</td>
+					<td>
+						<label>
+							<input name="t_id" type="text" id="t_id" />
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Nom</td>
+					<td>
+						<label>
+							<input name="t_nom" type="text" id="t_nom" />
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Prénom</td>
+					<td>
+						<label>
+							<input name="t_prenom" type="text" id="t_prenom" />
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Poste</td>
+					<td>
+						<label>
+							<input name="t_poste" type="text" id="t_poste" />
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Groupe</td>
+					<td>
+						<label>
+							<select name="t_groupe" type="text" id="t_groupe" />
+								<option>Employés</option>
+								<option>Administration</option>
+							<select>
+						</label>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label>
+							<input class='btn btn-success' name="ajouter" type="submit" id="ajouter" value="Ajouter" />
+						</label>
+					</td>
+				</tr>
+			</table>
+		</form>
+<?php
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$reponse = $bdd->query('SELECT * FROM employes ORDER BY nom');  
+?>
+		<table>
+			<tr>
+				<th width="50">ID</th>
+				<th width="152">Nom</th>
+				<th width="66">Prénom</th>
+				<th width="248">Poste</th>
+				<th width="248">Groupe</th>
+			</tr>
 <?php
 $var=0;
 while ($donnees = $reponse->fetch())
-//while($row=mysql_fetch_array($res))
 {
  
 if ($var==0)
 {
 ?>
-<tr bgcolor="#EEEEEE">
-<td><?php echo $donnees['nom']; ?></td>
-<td><?php echo $donnees['prenom']; ?></td>
-<td><?php echo $donnees['titre']; ?></td>
-</tr>
+			<tr class="color-row-zero">
+				<td><?php echo $donnees['id']; ?></td>
+				<td><?php echo $donnees['nom']; ?></td>
+				<td><?php echo $donnees['prenom']; ?></td>
+				<td><?php echo $donnees['titre']; ?></td>
+				<td><?php echo $donnees['groupe']; ?></td>
+			</tr>
 <?php
 $var=1; 
  }
 else
 {
 ?>
-<tr bgcolor="#FFCCCC">
-<td><?php echo $donnees['nom']; ?></td>
-<td><?php echo $donnees['prenom']; ?></td>
-<td><?php echo $donnees['titre']; ?></td>
-</tr>
+			<tr class="color-row-one">
+				<td><?php echo $donnees['id']; ?></td>
+				<td><?php echo $donnees['nom']; ?></td>
+				<td><?php echo $donnees['prenom']; ?></td>
+				<td><?php echo $donnees['titre']; ?></td>
+				<td><?php echo $donnees['groupe']; ?></td>
+			</tr>
 <?php
 $var=0; 
  }
  }
+$reponse->closeCursor();
 ?>
-</table>
+		</table>
+	</div>
+	<div id='btn-back'>
+		<button class="btn btn-primary" onClick="returnTo()">Retour</button>
+	</div>
+	<script>
+		$(document).ready(function()
+		{
+			$(".private-site-footer").css({"position":"absolute"}, {"bottom":"0px"});
+		});
+	</script>
+	<div class="private-site-footer"></div> 
 </body>
 </html>

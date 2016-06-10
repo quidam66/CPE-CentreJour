@@ -247,6 +247,21 @@ img {
   color: white;
 }
 
+.couleur-fond-td
+{
+  background-color: #ffcc00;
+}
+
+.color-row-zero
+{
+ background-color: #EEEEEE;
+}
+
+.color-row-one
+{
+ background-color: #FFCCCC;
+}
+
 /*.separator
 {
   width:90%;
@@ -479,14 +494,18 @@ img {
   font-size: 14px;
 }
 
-
-@media (max-width: 767px) {
-  table
-  {
-    width: 0;
-  }
+table
+{
+  width: 100%;
 }
 
+/*@media (max-width: 767px) {
+  table
+  {
+    width: 600;
+  }
+}
+*/
 table, td
 {
   color: #003366;
@@ -508,9 +527,10 @@ td
     padding: 5px;
 }
 
-th{
+th 
+{
   padding: 10px;
-  width: 110px;
+  width:110px;
 }
 
 .first-column
@@ -580,17 +600,16 @@ img.align-right
 {
   font-size: 14px;
   font-weight: bold;
-  position: absolute;
-  top:300px;
-  right:400px;
+  margin-top:100px;
+  color:#000000;
 }
 
 .private-site-footer {
   height: 100px;
   background-color: #FDE9D9;
   background-image: url("../images/fleursFooter3.png");
-  position: absolute;
-  bottom: 0;
+  /*position: absolute;
+  bottom: 0;*/
   left: -50px;
   width:150%;
 }
@@ -635,4 +654,17 @@ img.align-right
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+}
+
+#employe_form_container
+{
+  width:75%;
+  margin: auto;
+}
+
+#btn-back
+{
+  width:75%;
+  margin: auto;
+  padding-top: 20px;
 }
