@@ -376,6 +376,11 @@ img {
   margin-top: 25px;
 }
 
+.big-height
+{
+  margin-top: 525px;
+}
+
 .small-height > ul
 {
   margin-left:-6px;
