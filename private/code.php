@@ -181,7 +181,7 @@ else
     }
     else if(isset($_POST['supprimer']))       
     {
-        $bdd->exec("DELETE FROM employes where id='".$rech."'")
+        $bdd->exec("DELETE FROM employes where id='".$rech."'");
         echo '<body onLoad="alert(\'Suppression effectuée...\')">';
         echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
     }
