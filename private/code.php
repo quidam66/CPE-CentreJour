@@ -7,8 +7,19 @@ $rech=$_POST['t_rechercher'];
 $nom=$_POST['t_nom'];
 $prenom=$_POST['t_prenom'];
 $poste=$_POST['t_poste'];
-$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+try
+
+{
+  $bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+  $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (Exception $e)
+{
+  die('Erreur : ' . $e->getMessage());
+}
+
+
 /*$cn=mysql_connect("localhost","root");
 mysql_select_db("cpecentrejour",$cn);
 */
@@ -70,6 +81,7 @@ if (isset($_POST['rechercher']))
         </form>";
       }
     }
+    $reponse->closeCursor();
   }
 }
 else
@@ -93,13 +105,15 @@ else
     }
     else
     {
-      $rqt="insert employes values('$nom','$prenom','$poste')";
+      //$bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."' where nom='".$rech."'");
+      $bdd->exec("INSERT INTO employes(nom, prenom, titre) VALUES('".$nom."', '".$prenom."', '".$poste."')");
+      //$rqt="insert employes values('$nom','$prenom','$poste')";
 
-      mysql_query($rqt);
+      //mysql_query($rqt);
 
       echo '<body onLoad="alert(\'Ajout effectuée...\')">';
       echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-      mysql_close();
+      //mysql_close();
     }
   }
   else if (isset($_POST['modifier']))
@@ -112,22 +126,21 @@ else
     }
     else
     {
-      /*$rqt="update employes set nom='$nom',prenom='$prenom',tel='$poste' where nom ='$rech'";
-      mysql_query($rqt);*/
       $bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."' where nom='".$rech."'");
       echo '<body onLoad="alert(\'Modification effectuée...\')">';
       echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
       //mysql_close();
     }
   }
-  elseif(isset($_POST['supprimer']))       
+  else if(isset($_POST['supprimer']))       
   {
-    $rqt="delete  FROM employes  where nom ='$rech'";
-
-    mysql_query($rqt);
+/*    $rqt="delete  FROM employes  where nom ='$rech'";
+    DELETE FROM jeux_video WHERE nom='Battlefield 1942'
+*/    $bdd->exec("DELETE FROM employes where nom='".$rech."'");
+    //mysql_query($rqt);
     echo '<body onLoad="alert(\'Suppression effectuée...\')">';
     echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-    mysql_close();
+    //mysql_close();
   }
 }
 
@@ -138,41 +151,39 @@ $reponse = $bdd->query('SELECT * FROM employes');
 /*mysql_query($req);
 $res=mysql_query($req,$cn);*/  
 ?>
-<table width="630" align="left" bgcolor="#CCCCCC">
-<tr >
- 
-<td width="152">Nom</td>
-<td width="66">Prénom</td>
-<td width="248">Poste</td>
-</tr>
+  <table width="630" align="left" bgcolor="#CCCCCC">
+    <tr >
+      <td width="152">Nom</td>
+      <td width="66">Prénom</td>
+      <td width="248">Poste</td>
+    </tr>
 <?php
-$var=0;
-while ($donnees = $reponse->fetch())
-//while($row=mysql_fetch_array($res))
-{
- 
-if ($var==0)
-{
+  $var=0;
+  while ($donnees = $reponse->fetch())
+  {
+    if ($var==0)
+    {
 ?>
-<tr bgcolor="#EEEEEE">
-<td><?php echo $donnees['nom']; ?></td>
-<td><?php echo $donnees['prenom']; ?></td>
-<td><?php echo $donnees['titre']; ?></td>
-</tr>
+      <tr bgcolor="#EEEEEE">
+        <td><?php echo $donnees['nom']; ?></td>
+        <td><?php echo $donnees['prenom']; ?></td>
+        <td><?php echo $donnees['titre']; ?></td>
+      </tr>
 <?php
-$var=1; 
- }
-else
-{
+    $var=1; 
+    }
+    else
+    {
 ?>
-<tr bgcolor="#FFCCCC">
-<td><?php echo $donnees['nom']; ?></td>
-<td><?php echo $donnees['prenom']; ?></td>
-<td><?php echo $donnees['titre']; ?></td>
-</tr>
+      <tr bgcolor="#FFCCCC">
+        <td><?php echo $donnees['nom']; ?></td>
+        <td><?php echo $donnees['prenom']; ?></td>
+        <td><?php echo $donnees['titre']; ?></td>
+      </tr>
 <?php
-$var=0; 
- }
- }
+    $var=0; 
+    }
+  }
+  $reponse->closeCursor();
 ?>
 </table>
