@@ -34,14 +34,14 @@
     <tr>
       <td>Poste</td>
       <td><label>
-        <input name="t_tel" type="text" id="t_poste" />
+        <input name="t_poste" type="text" id="t_poste" />
       </label></td>
     </tr>
     <tr>
       <td colspan="2"><label>
         <input name="nouveau" type="reset" id="nouveau" value="Nouveau" />
         <input name="ajouter" type="submit" id="ajouter" value="Ajouter" />
-        <input name="modidier" type="submit" id="modidier" value="Modifier" />
+        <input name="modifier" type="submit" id="modifier" value="Modifier" />
         <input name="supprimer" type="submit" id="supprimer" value="Supprimer" />
       </label></td>
     </tr>
@@ -51,7 +51,7 @@
 <?php
 
 $bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
-
+$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $reponse = $bdd->query('SELECT * FROM employes'); 
 //$req="select * from employes";
 /*mysql_query($req);
@@ -88,7 +88,7 @@ else
 <td><?php echo $donnees['nom']; ?></td>
 <td><?php echo $donnees['prenom']; ?></td>
 <td><?php echo $donnees['titre']; ?></td>
-</tr><undefined></undefined>
+</tr>
 <?php
 $var=0; 
  }
