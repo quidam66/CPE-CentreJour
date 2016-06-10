@@ -4,6 +4,7 @@
 //$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
 
 $rech=$_POST['t_rechercher'];
+$id=$_POST['t_id'];
 $nom=$_POST['t_nom'];
 $prenom=$_POST['t_prenom'];
 $poste=$_POST['t_poste'];
@@ -38,9 +39,9 @@ if (isset($_POST['rechercher']))
   {
     foreach ($result as $donnees)
     {
-      if ($donnees['id'] == $rech)
-      {
-        echo "
+        if ($donnees['id'] == $rech)
+        {
+            echo "
 <html class='no-js' lang='fr-CA'>
 <head>
     <meta charset='utf-8' />
@@ -59,12 +60,13 @@ if (isset($_POST['rechercher']))
     <div class='iframe-title-bg'><span>Manipulation de la liste d'employés(ées)</span></div>
     <div id='employe_form_container'>
         <form id='form1' name='form1' method='post' action='code.php'>
+            <input name='t_rechercher' type='hidden' id='t_rechercher' value='$rech'/>
             <table>
                 <tr>
                     <td>ID</td>
                     <td>
                         <label>
-                            <input name='t_nom' type='text' id='t_nom'  value='$donnees[id]'/>
+                            <input name='t_id' type='text' id='t_id'  value='$donnees[id]'/>
                         </label>
                     </td>
                 </tr>
@@ -126,74 +128,62 @@ if (isset($_POST['rechercher']))
     <div class='private-site-footer'></div> 
 </body>
 </html>";
-}
-
-}
-$reponse->closeCursor();
-}
-}
-else
-{
-if (isset($_POST['ajouter']))
-{
-if($nom=='')
-{
-echo '<body onLoad="alert(\'Le nom est obligatoire\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-}
-elseif ($prenom=='')
-{
-echo '<body onLoad="alert(\'Le prénom est obligatoire...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-}
-elseif($poste=='')
-{
-echo '<body onLoad="alert(\'Le poste est obligatoire...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-}
-elseif($groupe=='')
-{
-echo '<body onLoad="alert(\'Le groupe est obligatoire...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+    }
+    $reponse->closeCursor();
+    }
 }
 else
 {
-//$bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."' where nom='".$rech."'");
-$bdd->exec("INSERT INTO employes(nom, prenom, titre, groupe) VALUES('".$nom."', '".$prenom."', '".$poste."', '".$groupe."')");
-//$rqt="insert employes values('$nom','$prenom','$poste')";
+    if (isset($_POST['ajouter']))
+    {
+        if($nom=='')
+        {
+            echo '<body onLoad="alert(\'Le nom est obligatoire\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+        else if ($prenom=='')
+        {
+            echo '<body onLoad="alert(\'Le prénom est obligatoire...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+        else if($poste=='')
+        {
+            echo '<body onLoad="alert(\'Le poste est obligatoire...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+        else if($groupe=='')
+        {
+            echo '<body onLoad="alert(\'Le groupe est obligatoire...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+        else
+        {
+            $bdd->exec("INSERT INTO employes(nom, prenom, titre, groupe) VALUES('".$nom."', '".$prenom."', '".$poste."', '".$groupe."')");
 
-//mysql_query($rqt);
-
-echo '<body onLoad="alert(\'Ajout effectuée...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-//mysql_close();
-}
-}
-else if (isset($_POST['modifier']))
-{
-echo "dans le modifier";
-if($nom=='' || $prenom=='' || $poste=='')
-{
-echo '<body onLoad="alert(\'faire une recherche avant la modification ou verifiez les champs\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-}
-else
-{
-$bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."',groupe='".$groupe."' where id='".$rech."'");
-echo '<body onLoad="alert(\'Modification effectuée...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-//mysql_close();
-}
-}
-else if(isset($_POST['supprimer']))       
-{
-/*    $rqt="delete  FROM employes  where nom ='$rech'";
-DELETE FROM jeux_video WHERE nom='Battlefield 1942'
-*/    $bdd->exec("DELETE FROM employes where id='".$rech."'");
-//mysql_query($rqt);
-echo '<body onLoad="alert(\'Suppression effectuée...\')">';
-echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
-//mysql_close();
-}
+            echo '<body onLoad="alert(\'Ajout effectuée...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+    }
+    else if (isset($_POST['modifier']))
+    {
+        if($nom=='' || $prenom=='' || $poste==''  || $groupe=='')
+        {
+            echo '<body onLoad="alert(\'faire une recherche avant la modification ou verifiez les champs\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+        else
+        {
+            $bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."',groupe='".$groupe."' where id='".$rech."'");
+            echo '<body onLoad="alert(\'Modification effectuée...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+        }
+    }
+    else if(isset($_POST['supprimer']))       
+    {
+        $bdd->exec("DELETE FROM employes where id='".$rech."'")
+        echo '<body onLoad="alert(\'Suppression effectuée...\')">';
+        echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
+    }
 }
 ?>
