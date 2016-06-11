@@ -91,7 +91,7 @@ img {
 
 #logoCPE
 {
-  background-image: url("../images/logoCJ_2.png");
+  background-image: url("../images/logoCJ_3.png");
   background-repeat: no-repeat;
   background-size: 180px 150px;
   height: 150px;
@@ -350,7 +350,7 @@ img {
   /*margin: 0 20px;*/
 }
 
-.iframe-p-text > p
+.iframe-p-text > p, .employes-container > p
 {
   font-size: 16px;
   text-align: justify;
@@ -376,6 +376,8 @@ img {
   text-align: justify;
   margin: 0 20px;
 }*/
+
+
 
 .center-title
 {
@@ -571,6 +573,7 @@ img.align-right
 
 .filterTwentyFive
 {
+
   filter:alpha(opacity=25);
   opacity: 0.25;
   -moz-opacity:0.25;
@@ -582,6 +585,27 @@ img.align-right
   top:0;
   width: 93%;
 
+}
+
+.background-equipe
+{
+  background: url("../images/fillette_alpha.png") center no-repeat;
+  /*filter:alpha(opacity=25);
+  opacity: 0.25;
+  -moz-opacity:0.25;*/
+}
+
+.background-accueil
+{
+  background: url("../images/fleurs2_alpha.png") center no-repeat;
+}
+
+.filter-container
+{
+  position: fixed;
+  z-index: -10;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .login-form
