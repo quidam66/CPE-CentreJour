@@ -1,6 +1,7 @@
 <?php
     include('session.php');
 ?>
+<!doctype html>
 <html class="no-js" lang="fr-CA">
 <head>
 	<meta charset="utf-8" />
@@ -100,11 +101,11 @@
 ?>
 		<table>
 			<tr>
-				<th width="50">ID</th>
-				<th width="152">Nom</th>
-				<th width="66">Prénom</th>
-				<th width="248">Poste</th>
-				<th width="248">Groupe</th>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Prénom</th>
+				<th>Poste</th>
+				<th>Groupe</th>
 			</tr>
 <?php
 $var=0;

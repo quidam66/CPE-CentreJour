@@ -41,7 +41,7 @@ if (isset($_POST['rechercher']))
     {
         if ($donnees['id'] == $rech)
         {
-            echo "
+            echo "<!doctype html>
 <html class='no-js' lang='fr-CA'>
 <head>
     <meta charset='utf-8' />
