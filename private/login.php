@@ -7,15 +7,17 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT * FROM members WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $myusername = $_POST['username'];
+      $mypassword = $_POST['password'];
+
+      $result = $bdd->query("SELECT * FROM members WHERE username = '".$myusername."' AND password = '".$mypassword."'");
+      /*$sql = "SELECT * FROM members WHERE username = '$myusername' and password = '$mypassword'";
+      $ = mysqli_query($db,$sql);*/
+      $count = $result->rowCount();
+      /*$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       
-      $count = mysqli_num_rows($result);
+      $count = mysqli_num_rows($result);*/
       
       // If result matched $myusername and $mypassword, table row must be 1 row
         

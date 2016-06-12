@@ -3555,6 +3555,14 @@ tbody.collapse.in {
   color: #fff;
   white-space: nowrap;
 }
+
+@media (max-width: 767px){
+  .dropdown-menu > li > a {
+    white-space: normal;
+  }
+}
+
+}
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   color: #003366;

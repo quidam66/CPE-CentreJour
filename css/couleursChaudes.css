@@ -84,7 +84,7 @@ img {
 @media (max-width: 767px) {
   #cpe-header {
     font-size: 36px;
-    margin-top: 10px;
+    margin-top: -25px;
     margin-left: 80px;
   }
 }
@@ -471,6 +471,14 @@ img {
   height: 400px;
 }
 
+@media (max-width: 767px){
+  .img-cycle-sommeil
+  {
+    background: url("../images/cycle-sommeil.png") center no-repeat;
+    background-size: 300px;
+  }
+}
+
 .frame
 {
   border: 2px solid #003366 !important;
@@ -501,13 +509,6 @@ table
   width: 100%;
 }
 
-/*@media (max-width: 767px) {
-  table
-  {
-    width: 600;
-  }
-}
-*/
 table, td
 {
   color: #003366;

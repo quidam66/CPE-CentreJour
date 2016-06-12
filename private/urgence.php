@@ -8,7 +8,6 @@
 	$data = json_decode($json, true);
 	//$message = $parsed_json->{'message'}->{'texte'};
 	$message = $data['message']['texte'];
-	echo "Message: $message";
 
 	$error = "";
 
