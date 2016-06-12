@@ -31,7 +31,7 @@
 				</div>
 				<div class="form-label">Raison(s) de l'absence:&nbsp;</div>
 				<div>
-					<textarea id="message form-input" name="message" value="" rows="10" cols="66"></textarea>
+					<textarea class="message-text" id="message" name="message" value="" rows="10" cols="66"></textarea>
 				</div>
 				<div class="small-height"></div>
 				<div>

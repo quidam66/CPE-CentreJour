@@ -64,34 +64,15 @@ $(".nav a").on("click", function(){
 
 function resizeIframe()
 {
-	/*var infoH = $(".information").css("height");
-	infoH = infoH.substring(0, infoH.indexOf("px"));
-
-	var headH = $(".site-header").css("height");
-	headH = headH.substring(0, headH.indexOf("px"));
-
-	var footH = $(".site-footer").css("height");
-	footH = footH.substring(0, footH.indexOf("px"));
-
-	console.log("height du page moins document WIDTH = " + document.body.clientWidth);
-
-	if(infoH > document.body.clientHeight)
-	{
-		$(".index_ifrm").css("height", infoH);
-	}
-	else
-	{
-		$(".index_ifrm").css("height", (document.body.clientHeight - footH - 5));		
-	}*/
-
-	//$(".index_ifrm").css("height", infoH);
-	//$(".site-footer").css("bottom", 10);
-
 	console.log($(".index_ifrm").contents().outerHeight());
 	$(".index_ifrm").css("height", 0);
-	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75);		
-
+	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75);	
 };
+
+function resizePrivatePage()
+{
+	
+}
 
 function goBack()
 {
@@ -103,16 +84,49 @@ function returnTo()
 	$("head").append("<meta http-equiv='refresh' content='0;URL=../private/welcome.php'>");
 }
 
+function backHome()
+{
+	document.location.href='../index.html';
+}
+
+function backToWelcome()
+{
+	document.location.href='../private/welcome.php';
+}
+
 function logout()
 {
-	console.log("in logout");
 	document.location.href='../private/logout.php';
 }
+
+$(document).ready(function()
+{
+	if($("#login_form_container").height() != null)
+	{
+		console.log($("#login_form_container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#login_form_container").height() + 90)+"px"}); 		
+	}
+
+	if($("#employe_form_container").height() != null)
+	{
+		console.log($("#employe_form_container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#employe_form_container").height() + 100)+"px"}); 		
+	}
+
+	if($("#welcome_form_container").height() != null)
+	{
+		console.log($("#welcome_form_container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#welcome_form_container").height() + 250)+"px"}); 		
+	}
+});
 
 /*$("#css1").click(function() { $("link[rel=stylesheet]").attr({href : "css/style.css"}); }); 
 $("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleursChaudes.css"}); });*/
 
-//$(".index_ifrm").onLoad = resizeIframe;
+
 //maframe.onLoad = resizeIframe();
 window.onresize = resizeIframe; 
 

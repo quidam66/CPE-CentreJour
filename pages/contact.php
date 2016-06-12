@@ -35,26 +35,24 @@
 				<form id="formulaire" name="formulaire" action="" method="POST">
 					<div class="form-label">Votre nom:&nbsp;</div>
 					<div>
-						<input class="input form-input" id="nom" name="nom" size="42" maxlength="50" type="text">
+						<input class="input form-input-contact" id="nom" name="nom" size="42" maxlength="50" type="text">
 					</div>
 					<div class="form-label">Votre courriel:&nbsp;</div>
 					<div>
-						<input class="input form-input" id="courriel" name="courriel" size="42" maxlength="50" type="text">
+						<input class="input form-input-contact" id="courriel" name="courriel" size="42" maxlength="50" type="text">
 					</div>
 					<div class="form-label">Sujet:&nbsp;</div>
 					<div>
-						<input class="input form-input" id="sujet" name="sujet" size="42" maxlength="50" type="text">
+						<input class="input form-input-contact" id="sujet" name="sujet" size="42" maxlength="50" type="text">
 					</div>
 					<div class="form-label">Votre message:&nbsp;</div>
 					<div>
-						<textarea id="message form-input" name="message" value="" rows="10" cols="66"></textarea>
+						<textarea class="message-text-contact" id="message" name="message" value="" rows="10" cols="66"></textarea>
 					</div>
 					<div class="small-height"></div>
 					<div>
 					  	<button type="button submit" class="btn btn-primary">Envoyer</button>
 					</div>
-
-
 		    	<?php
 					require_once "Mail.php";
 

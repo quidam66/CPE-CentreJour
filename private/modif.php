@@ -28,17 +28,15 @@
 						</label>
 					</td>
 					<td class="couleur-fond-td">
-						<label>
-							<input name="t_rechercher" type="text" id="t_rechercher" />
-							<span>Recherche par numero d'identifiant</span>
-						</label>
+							<input class="search-form" name="t_rechercher" type="text" id="t_rechercher" />
+							<span>Recherche par numéro</span>
 					</td>
 				</tr>
 				<tr>
-					<td>ID</td>
+					<td>Numéro</td>
 					<td>
 						<label>
-							<input name="t_id" type="text" id="t_id" />
+							<input class="search-form" name="t_cpe_id" type="text" id="t_cpe_id" />
 						</label>
 					</td>
 				</tr>
@@ -46,7 +44,7 @@
 					<td>Nom</td>
 					<td>
 						<label>
-							<input name="t_nom" type="text" id="t_nom" />
+							<input class="search-form" name="t_nom" type="text" id="t_nom" />
 						</label>
 					</td>
 				</tr>
@@ -54,7 +52,7 @@
 					<td>Prénom</td>
 					<td>
 						<label>
-							<input name="t_prenom" type="text" id="t_prenom" />
+							<input class="search-form" name="t_prenom" type="text" id="t_prenom" />
 						</label>
 					</td>
 				</tr>
@@ -62,7 +60,7 @@
 					<td>Poste</td>
 					<td>
 						<label>
-							<input name="t_poste" type="text" id="t_poste" />
+							<input class="search-form" name="t_poste" type="text" id="t_poste" />
 						</label>
 					</td>
 				</tr>
@@ -101,7 +99,7 @@
 ?>
 		<table>
 			<tr>
-				<th>ID</th>
+				<th>Numéro</th>
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th>Poste</th>
@@ -116,7 +114,7 @@ if ($var==0)
 {
 ?>
 			<tr class="color-row-zero">
-				<td><?php echo $donnees['id']; ?></td>
+				<td><?php echo $donnees['cpe_id']; ?></td>
 				<td><?php echo $donnees['nom']; ?></td>
 				<td><?php echo $donnees['prenom']; ?></td>
 				<td><?php echo $donnees['titre']; ?></td>
@@ -129,7 +127,7 @@ else
 {
 ?>
 			<tr class="color-row-one">
-				<td><?php echo $donnees['id']; ?></td>
+				<td><?php echo $donnees['cpe_id']; ?></td>
 				<td><?php echo $donnees['nom']; ?></td>
 				<td><?php echo $donnees['prenom']; ?></td>
 				<td><?php echo $donnees['titre']; ?></td>
@@ -146,12 +144,6 @@ $reponse->closeCursor();
 	<div id='btn-back'>
 		<button class="btn btn-primary" onClick="returnTo()">Retour</button>
 	</div>
-	<script>
-		$(document).ready(function()
-		{
-			$(".private-site-footer").css({"position":"absolute"}, {"bottom":"0px"});
-		});
-	</script>
 	<div class="private-site-footer"></div> 
 </body>
 </html>

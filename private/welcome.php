@@ -16,7 +16,7 @@
    <script src="../js/scripts.js"></script>
 </head>
 <body class="private-page">
-	<div class="container">
+	<div id="welcome_form_container" class="container">
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg"><span>Bienvenue <?php echo $login_session; ?></span></div>
 			
@@ -26,16 +26,6 @@
 		</div>
 
 	</div>
-
-	
-
-	<script>
-		$(document).ready(function()
-		{
-			$(".private-site-footer").css({"position":"absolute"});
-			$(".private-site-footer").css({"bottom":"0px"});
-		});
-	</script>
 	<div class="private-site-footer"></div>
 </body>
    

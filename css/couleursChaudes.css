@@ -62,7 +62,6 @@ img {
 }
 
 .site-header {
-  /*border: solid green 1px;*/
   background-color: #FDE9D9;
   position: absolute;
   top: 0;
@@ -227,20 +226,17 @@ img {
   }
 }
 
-/*bleu*/
 .couleurUn
 {
   background-color: #0099ff;
 }
 
-/*jaune*/
 .couleurDeux
 {
   background-color: #ffcc00;
   color: white;
 }
 
-/*vert*/
 .couleurTrois
 {
   background-color: #9bdd0d;
@@ -261,17 +257,6 @@ img {
 {
  background-color: #FFCCCC;
 }
-
-/*.separator
-{
-  width:90%;
-  border-top: 3px solid #ffcc00;
-  border-bottom: 3px solid #0099ff;
-  margin-bottom: 30px;
-  padding: 0;
-  height: 15px;
-}*/
-
 
 .box-title
 {
@@ -347,7 +332,6 @@ img {
 .iframe-p-text
 {
   text-align: justify;
-  /*margin: 0 20px;*/
 }
 
 .iframe-p-text > p, .employes-container > p
@@ -369,15 +353,6 @@ img {
   color: #0099ff;
   font-size: 16px;
 }
-
-/*.iframe-text > p
-{
-  font-size: 12px;
-  text-align: justify;
-  margin: 0 20px;
-}*/
-
-
 
 .center-title
 {
@@ -401,7 +376,6 @@ img {
 .small-height > ul
 {
   margin-left:-6px;
-  /*color: #003366;*/
   font-size: 14px;
   font-weight: bold;
 }
@@ -504,42 +478,77 @@ img {
   font-size: 14px;
 }
 
-table
-{
-  width: 100%;
+table {
+  color: #003366; 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  /*background: #eee;*/ 
+}
+th { 
+  background: #003366; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #003366; 
+  text-align: left; 
 }
 
-table, td
-{
-  color: #003366;
-  border: 1px solid #003366;
-  border-collapse: collapse;
-}
+@media (max-width: 767px){
 
-th 
-{
-  border: 3px solid #003366;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-}
+  /* Force table to not be like tables anymore */
+  .table-menu > table, .table-menu > thead, .table-menu > tbody, .table-menu > th, .table-menu > td, .table-menu > tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .table-menu > thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .table-menu > tr { border: 1px solid #003366; }
+  
+  .table-menu > td { 
+    border: none;
+    border-bottom: 1px solid #003366; 
+    position: relative;
+    padding-left: 50%; 
+  }
+  
+  .table-menu > td:before { 
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
 
-td
-{
-    font-size: 12px;
-    padding: 5px;
-}
-
-th 
-{
-  padding: 10px;
-  width:110px;
+  .table-menu > td:nth-of-type(1):before { content: ""; }
+  .table-menu > td:nth-of-type(2):before { content: "Lundi"; }
+  .table-menu > td:nth-of-type(3):before { content: "Mardi"; }
+  .table-menu > td:nth-of-type(4):before { content: "Mercredi"; }
+  .table-menu > td:nth-of-type(5):before { content: "Jeudi"; }
+  .table-menu > td:nth-of-type(6):before { content: "Vendredi"; }
 }
 
 .first-column
 {
   font-size: 16px;
   font-weight: bold;
+}
+
+@media (max-width: 767px){
+  .first-column
+  {
+    font-size: 12px;
+  }
 }
 
 .form-label
@@ -554,6 +563,66 @@ th
   color: #0099ff;
   font-size: 16px;
   font-weight: bold;
+  width:500px;
+}
+
+.form-input-contact
+{
+  color: #0099ff;
+  font-size: 16px;
+  font-weight: bold;
+  width:450px;
+}
+
+@media (max-width: 767px){
+  .form-input, .form-input-contact
+  {
+    width:250px;
+  }
+}
+
+.search-form
+{
+    width:350px;
+}
+
+@media (max-width: 767px){
+  .search-form
+  {
+    width:226px;
+  }
+}
+
+.message-text
+{
+  font-size: 14px;
+  width:580px;
+  height: 90px;
+}
+
+.message-text-contact
+{
+  font-size: 14px;
+  width:450px;
+  height: 90px;
+}
+
+@media (max-width: 767px){
+  .message-text, .message-text-contact
+  {
+    width:285px;
+  }
+}
+
+.form-ckb
+{
+  width: 25px;
+  height:25px;
+}
+
+#label-message
+{
+  margin-left: 10px;
 }
 
 .form-btn-label
@@ -591,9 +660,6 @@ img.align-right
 .background-equipe
 {
   background: url("../images/fillette_alpha.png") center no-repeat;
-  /*filter:alpha(opacity=25);
-  opacity: 0.25;
-  -moz-opacity:0.25;*/
 }
 
 .background-accueil
@@ -617,6 +683,7 @@ img.align-right
 
 .error-connexion
 {
+  color: red;
   font-size: 18px;
   font-weight: bold;
 }
@@ -633,8 +700,6 @@ img.align-right
   height: 100px;
   background-color: #FDE9D9;
   background-image: url("../images/fleursFooter3.png");
-  /*position: absolute;
-  bottom: 0;*/
   left: -50px;
   width:150%;
 }
@@ -681,7 +746,7 @@ img.align-right
   font-weight: bold;
 }
 
-#employe_form_container
+#employe_form_container, #login_form_container
 {
   width:75%;
   margin: auto;

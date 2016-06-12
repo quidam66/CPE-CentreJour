@@ -2,8 +2,8 @@
 	try
 	{
 		$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
-
 		//$bdd = new PDO('mysql:host=http://www.cpecentrejour.com/gdddbmgr/;port=3306;dbname=DAVOS_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
+		
 		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch (Exception $e)
@@ -58,11 +58,6 @@
 <body class="iframeBody background-equipe">
 	<div class="container">
 		<div class="iframe-p-text">
-		
-		<!-- <p>
-			<img class="filterTwentyFive" src="../images/fillette.png"></img>
-		</p> -->
-		<!-- <div class="employes-container"> -->
 		<div class="iframe-title-bg"><span>L'équipe</span></div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
@@ -123,7 +118,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- </div> -->
 	<?php
 		/*$result->closeCursor();
 		$resultAdmin->closeCursor();*/

@@ -1,10 +1,8 @@
 <?php
-    include('session.php');
-
-//$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+include('session.php');
 
 $rech=$_POST['t_rechercher'];
-$id=$_POST['t_id'];
+$id=$_POST['t_cpe_id'];
 $nom=$_POST['t_nom'];
 $prenom=$_POST['t_prenom'];
 $poste=$_POST['t_poste'];
@@ -13,6 +11,7 @@ $groupe=$_POST['t_groupe'];
 try
 {
   $bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+  //$bdd = new PDO('mysql:host=http://www.cpecentrejour.com/gdddbmgr/;port=3306;dbname=DAVOS_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (Exception $e)
@@ -21,12 +20,9 @@ catch (Exception $e)
 }
 
 
-/*$cn=mysql_connect("localhost","root");
-mysql_select_db("cpecentrejour",$cn);
-*/
 if (isset($_POST['rechercher']))
 {
-  $reponse = $bdd->query("SELECT * FROM employes WHERE id='".$rech."'");
+  $reponse = $bdd->query("SELECT * FROM employes WHERE cpe_id='".$rech."'");
 
 
   $result = $reponse->fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +35,7 @@ if (isset($_POST['rechercher']))
   {
     foreach ($result as $donnees)
     {
-        if ($donnees['id'] == $rech)
+        if ($donnees['cpe_id'] == $rech)
         {
             echo "<!doctype html>
 <html class='no-js' lang='fr-CA'>
@@ -63,10 +59,10 @@ if (isset($_POST['rechercher']))
             <input name='t_rechercher' type='hidden' id='t_rechercher' value='$rech'/>
             <table>
                 <tr>
-                    <td>ID</td>
+                    <td>Identifiant</td>
                     <td>
                         <label>
-                            <input name='t_id' type='text' id='t_id'  value='$donnees[id]'/>
+                            <input class='search-form' name='t_cpe_id' type='text' id='t_cpe_id' value='$donnees[cpe_id]'/>
                         </label>
                     </td>
                 </tr>
@@ -74,7 +70,7 @@ if (isset($_POST['rechercher']))
                     <td>Nom</td>
                     <td>
                         <label>
-                            <input name='t_nom' type='text' id='t_nom'  value='$donnees[nom]'/>
+                            <input class='search-form' name='t_nom' type='text' id='t_nom'  value='$donnees[nom]'/>
                         </label>
                     </td>
                 </tr>
@@ -82,7 +78,7 @@ if (isset($_POST['rechercher']))
                     <td>Prénom</td>
                     <td>
                         <label>
-                            <input name='t_prenom' type='text' id='t_prenom' value='$donnees[prenom]' />
+                            <input class='search-form' name='t_prenom' type='text' id='t_prenom' value='$donnees[prenom]' />
                         </label>
                     </td>
                 </tr>
@@ -90,7 +86,7 @@ if (isset($_POST['rechercher']))
                     <td>Poste</td>
                     <td>
                         <label>
-                            <input name='t_poste' type='text' id='t_poste' value='$donnees[titre]' />
+                            <input class='search-form' name='t_poste' type='text' id='t_poste' value='$donnees[titre]' />
                         </label>
                     </td>
                 </tr>
@@ -98,10 +94,19 @@ if (isset($_POST['rechercher']))
                     <td>Groupe</td>
                     <td>
                         <label>
-                            <select name='t_groupe' id='t_groupe' value='$donnees[groupe]' />
-                                <option>Employés</option>
-                                <option>Administration</option>
-                            <select>
+                            <select name='t_groupe' id='t_groupe' value='$donnees[groupe]' />";
+                                
+                                if($donnees['groupe'] == 'Employés')
+                                {
+                                    echo "<option selected>Employés</option>
+                                            <option>Administration</option>";
+                                }
+                                else
+                                {
+                                    echo "<option>Employés</option>
+                                <option selected>Administration</option>";
+                                }      
+                            echo "
                         </label>
                     </td>
                 </tr>
@@ -119,18 +124,12 @@ if (isset($_POST['rechercher']))
     <div id='btn-back'>
         <button class='btn btn-primary' onclick='goBack()'>Retour</button>
     </div>
-    <script>
-        $(document).ready(function()
-        {
-            $('.private-site-footer').css({'position':'absolute'}, {'bottom':'0px'});
-        });
-    </script>
     <div class='private-site-footer'></div> 
 </body>
 </html>";
         }
     }
-    $reponse->closeCursor();
+        $reponse->closeCursor();
     }
 }
 else
@@ -174,14 +173,14 @@ else
         }
         else
         {
-            $bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."',groupe='".$groupe."' where id='".$rech."'");
+            $bdd->exec("UPDATE employes SET nom='".$nom."',prenom='".$prenom."',titre='".$poste."',groupe='".$groupe."' where cpe_id='".$rech."'");
             echo '<body onLoad="alert(\'Modification effectuée...\')">';
             echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
         }
     }
     else if(isset($_POST['supprimer']))       
     {
-        $bdd->exec("DELETE FROM employes where id='".$rech."'");
+        $bdd->exec("DELETE FROM employes where cpe_id='".$rech."'");
         echo '<body onLoad="alert(\'Suppression effectuée...\')">';
         echo '<meta http-equiv="refresh" content="0;URL=modif.php">';
     }

@@ -11,21 +11,32 @@
 
 	$error = "";
 
-	if($_SERVER["REQUEST_METHOD"] == "POST") {
-	// username and password sent from form 
-      	$data['message']['texte'] = $_POST['texte'];
-      	if(isset($_POST['affiche']))
+	if($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+      	if((($_POST['texte'] != '') && isset($_POST['affiche'])) ||
+      	  (($_POST['texte'] != '') && !isset($_POST['affiche'])) ||
+      	  (($_POST['texte'] == '') && !isset($_POST['affiche'])))
       	{
-      		$data['message']['active'] = true;
+	      	if(isset($_POST['affiche']))
+	      	{
+	      		$data['message']['active'] = true;
+	      	}
+	      	else
+	      	{
+	      		$data['message']['active'] = false;
+	      	}
+
+      		$data['message']['texte'] = $_POST['texte'];
+			$date = date('d-m-Y');
+			$data['message']['date'] = $date;
+			$newJsonString = json_encode($data);
+			file_put_contents('message.json', $newJsonString); 
       	}
-      	else
+      	else if (($_POST['texte'] == '') && isset($_POST['affiche']))
       	{
-      		$data['message']['active'] = false;
+      		$error = "Veuillez entrer un message.";
       	}
-		
-		$newJsonString = json_encode($data);
-		file_put_contents('message.json', $newJsonString);      
-   }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,17 +57,19 @@
 	<script type = "text/javascript" language = "javascript">
 		$(document).ready(function() {
            $.getJSON('message.json', function(jd) {
-           		console.log(jd.message.active)
+           		console.log(jd.message.active);
+           		console.log(jd.message.texte);
+           		console.log(jd.message.date);
            		$('#affiche').prop("checked", jd.message.active);
 
            		if(jd.message.texte == "")
            		{
-           			$('#json-texte').append('<p class="form-input">Aucun message à afficher</p>');
+           			$('#json-texte').append('<p>Aucun message à afficher</p>');
            		}
            		else
            		{
-           			$('#json-texte').append('<p class="form-input">' + jd.message.texte + '</p>');
-           			$('.text').val(jd.message.texte);
+           			$('#json-texte').append('<p>' + jd.message.date+ ' : ' + jd.message.texte + '</p>');
+           			$('.texte').val(jd.message.texte);
            		}
            });
 		});	
@@ -70,29 +83,33 @@
             	<div class="box-title">Entrez le message</div>
 	            <div class="box-inner">
 	            	<form class="message-form" id="formulaire" name="formulaire" action="" method="POST">
+	            		<div class="warning-text"><p><?php echo $error; ?></p></div>
 			         	<div>
-							<span class="form-label">Afficher le message:</span>
-							<input type="checkbox" id="affiche" name="affiche[]" value="message">
+							<input class="form-ckb" type="checkbox" id="affiche" name="affiche[]" value="message"/>
+							<label id="label-message" class="form-label"> Afficher le message</label>
 						</div>
-
-						<div class="form-label">Dernier message enregistré:&nbsp;</div>
-						<div id="json-texte"></div>
-
-						<div class="form-label">Votre message:&nbsp;</div>
 						<div>
-							<textarea id="texte form-input" class="text" name="texte" value="" rows="3" cols="120"></textarea>
+							<div class="form-label">Dernier message enregistré:&nbsp;</div>
+							<div id="json-texte"></div>
+						</div>
+						<div>
+							<div class="form-label">Votre message:&nbsp;</div>
+							<div>
+								<textarea class="texte message-text" id="texte" name="texte"></textarea>
+							</div>
 						</div>
 						<div class="small-height"></div>
 						<div>
 						  	<button type="button submit" class="btn btn-primary">Envoyer</button>
 						</div>
+		                <div class="small-height"></div>
 					</form>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div>
-		<button class="btn btn-primary" onclick="goBack()">Retour</button>
+		<div>
+			<button class="btn btn-primary" onclick="backToWelcome()">Retour</button>
+		</div>
 	</div>
 	<div class="private-site-footer"></div> 
 </body>
