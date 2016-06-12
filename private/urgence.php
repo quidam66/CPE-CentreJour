@@ -76,7 +76,7 @@
 	</script>
 </head>
 <body class="private-page">
-   <div class="container">
+   <div id="urgence-form-container">
       <div class="iframe-p-text">
          <div class="iframe-title-bg"><span>Section réservée à l'administration</span></div>
          	<div class="texteInfo">
@@ -95,7 +95,7 @@
 						<div>
 							<div class="form-label">Votre message:&nbsp;</div>
 							<div>
-								<textarea class="texte message-text" id="texte" name="texte"></textarea>
+								<textarea class="texte message-text-message" id="texte" name="texte"></textarea>
 							</div>
 						</div>
 						<div class="small-height"></div>

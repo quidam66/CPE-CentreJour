@@ -54,7 +54,7 @@ if (isset($_POST['rechercher']))
 </head>
 <body class='private-page'>
     <div class='iframe-title-bg'><span>Manipulation de la liste d'employés(ées)</span></div>
-    <div id='employe_form_container'>
+    <div id='code-form-container'>
         <form id='form1' name='form1' method='post' action='code.php'>
             <input name='t_rechercher' type='hidden' id='t_rechercher' value='$rech'/>
             <table>

@@ -18,7 +18,7 @@
 </head>
 <body class="private-page">
 	<div class="iframe-title-bg"><span>Manipulation de la liste d'employés(ées)</span></div>
-	<div id="employe_form_container">
+	<div id="modif-form-container">
 		<form id="form1" name="form1" method="post" action="code.php">
 			<table>
 				<tr>

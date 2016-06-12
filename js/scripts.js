@@ -101,25 +101,46 @@ function logout()
 
 $(document).ready(function()
 {
-	if($("#login_form_container").height() != null)
+	if($("#login-form-container").height() != null)
 	{
-		console.log($("#login_form_container").height());
+		console.log($("#login-form-container").height());
 		$(".private-site-footer").css({"position":"absolute"});
-		$(".private-site-footer").css({"top":($("#login_form_container").height() + 90)+"px"}); 		
+		$(".private-site-footer").css({"top":($("#login-form-container").height() + 90)+"px"}); 		
 	}
 
-	if($("#employe_form_container").height() != null)
+	if($("#employe-form-container").height() != null)
 	{
-		console.log($("#employe_form_container").height());
+		console.log($("#employe-form-container").height());
 		$(".private-site-footer").css({"position":"absolute"});
-		$(".private-site-footer").css({"top":($("#employe_form_container").height() + 100)+"px"}); 		
+		$(".private-site-footer").css({"top":($("#employe-form-container").height() + 100)+"px"}); 		
 	}
 
-	if($("#welcome_form_container").height() != null)
+	if($("#welcome-form-container").height() != null)
 	{
-		console.log($("#welcome_form_container").height());
+		console.log($("#welcome-form-container").height());
 		$(".private-site-footer").css({"position":"absolute"});
-		$(".private-site-footer").css({"top":($("#welcome_form_container").height() + 250)+"px"}); 		
+		$(".private-site-footer").css({"top":($("#welcome-form-container").height() + 250)+"px"}); 		
+	}
+
+	if($("#urgence-form-container").height() != null)
+	{
+		console.log($("#urgence-form-container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#urgence-form-container").height() + 50)+"px"}); 		
+	}
+
+	if($("#modif-form-container").height() != null)
+	{
+		console.log($("#modif-form-container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#modif-form-container").height() + 150)+"px"}); 		
+	}
+
+	if($("#code-form-container").height() != null)
+	{
+		console.log($("#code-form-container").height());
+		$(".private-site-footer").css({"position":"absolute"});
+		$(".private-site-footer").css({"top":($("#code-form-container").height() + 280)+"px"}); 		
 	}
 });
 

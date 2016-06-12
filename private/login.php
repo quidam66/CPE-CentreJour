@@ -48,7 +48,7 @@
    <script src="../js/scripts.js"></script>
 </head>
 <body class="private-page">
-   <div id="login_form_container">
+   <div id="login-form-container">
       <div class="iframe-p-text">
          <div class="iframe-title-bg"><span>Section réservée à l'administration</span></div>
          <div class="texteInfo">

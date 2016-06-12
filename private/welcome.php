@@ -16,7 +16,7 @@
    <script src="../js/scripts.js"></script>
 </head>
 <body class="private-page">
-	<div id="welcome_form_container" class="container">
+	<div id="welcome-form-container" class="container">
 		<div class="iframe-p-text">
 			<div class="iframe-title-bg"><span>Bienvenue <?php echo $login_session; ?></span></div>
 			

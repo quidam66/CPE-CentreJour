@@ -600,6 +600,13 @@ td, th {
   height: 90px;
 }
 
+.message-text-message
+{
+  font-size: 14px;
+  width:530px;
+  height: 90px;
+}
+
 .message-text-contact
 {
   font-size: 14px;
@@ -746,7 +753,7 @@ img.align-right
   font-weight: bold;
 }
 
-#employe_form_container, #login_form_container
+#employe-form-container, #login-form-container, #welcome-form-container, #urgence-form-container, #modif-form-container, #code-form-container
 {
   width:75%;
   margin: auto;
