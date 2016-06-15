@@ -1,3 +1,65 @@
+<?php
+	require_once "Mail.php";
+
+	if(isset($_POST['envoyer']))
+	{
+		if(!empty($_POST['nom']) && !empty($_POST['courriel']) && !empty($_POST['sujet']) && !empty($_POST['message']))
+		{
+			$nom = $_POST['nom'];
+			$courriel = $_POST['courriel'];
+
+
+			$from = $nom.'<'.$courriel.'>';
+			$to = "CPE Centre Jour <reception@cpecentrejour.com>";
+			$subject = $_POST['sujet'];
+			$body = $_POST['message'];
+			$host = "pop.logicielsdavos.com";
+
+			$username = "reception@cpecentrejour.com";
+			$password = "22X6503U";
+			$headers = array ('From' => $from,
+			                  'To' => $to,
+			                  'Subject' => $subject);
+			$smtp = Mail::factory('smtp',
+			                      array ('host' => $host,
+			                             'auth' => true,
+			                             'username' => $username,
+			                             'password' => $password));
+
+			                             
+			$mail = $smtp->send($to, $headers, $body);
+			 
+			if (PEAR::isError($mail))
+			{
+			    $error = $mail->getMessage();
+			} 
+			else 
+			{
+			   $error = "Votre courriel a été envoyé au CPE Centre Jour";
+			}
+    	}
+		else
+		{
+			if(empty($_POST['nom']))
+			{
+				$error = "Entrez votre nom s'il vous plaît";
+			}
+			else if (empty($_POST['sujet']))
+			{
+				 $error = "Entrez votre le sujet de votre courriel s'il vous plaît";
+			}
+			else if (empty($_POST['courriel']))
+			{
+				$error = "Entrez votre courriel s'il vous plaît";
+			}
+			else if(empty($_POST['message']))
+			{
+				$error = "Entrez un message s'il vous plaît";
+			}
+		}
+	}
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -33,6 +95,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<form id="formulaire" name="formulaire" action="" method="POST">
+					<div class="error-connexion"><p><?php echo $error; ?></p></div>
 					<div class="form-label">Votre nom:&nbsp;</div>
 					<div>
 						<input class="input form-input-contact" id="nom" name="nom" size="42" maxlength="50" type="text">
@@ -51,66 +114,9 @@
 					</div>
 					<div class="small-height"></div>
 					<div>
-					  	<button type="button submit" class="btn btn-primary">Envoyer</button>
+					  	<button type="button submit" name="envoyer" id="envoyer"class="btn btn-primary">Envoyer</button>
 					</div>
-		    	<?php
-					require_once "Mail.php";
 
-		    		if(isset($_POST) &&  !empty($_POST['nom']) && !empty($_POST['courriel']) && !empty($_POST['sujet']) && !empty($_POST['message']))
-		    		{
-						$nom = $_POST['nom'];
-						$courriel = $_POST['courriel'];
-
-
-						$from = $nom.'<'.$courriel.'>';
-						$to = "CPE Centre Jour <reception@cpecentrejour.com>";
-						$subject = $_POST['sujet'];
-						$body = $_POST['message'];
-						$host = "pop.logicielsdavos.com";
-
-						$username = "reception@cpecentrejour.com";
-						$password = "22X6503U";
-						$headers = array ('From' => $from,
-						                  'To' => $to,
-						                  'Subject' => $subject);
-						$smtp = Mail::factory('smtp',
-						                      array ('host' => $host,
-						                             'auth' => true,
-						                             'username' => $username,
-						                             'password' => $password));
-
-						                             
-						$mail = $smtp->send($to, $headers, $body);
-						 
-						if (PEAR::isError($mail))
-						{
-						    echo("<p>" . $mail->getMessage() . "</p>");
-						} 
-						else 
-						{
-						   echo("<div><p>Votre courriel a été envoyé au CPE Centre Jour</p></div>");
-						}
-		    		}
-		    		else
-		    		{
-		    			if(empty($_POST['nom']))
-		    			{
-		    				echo("<div><p>Entrez votre nom s'il vous plaît</p></div>");
-		    			}
-		    			else if (empty($_POST['sujet']))
-		    			{
-		    				 echo("<div><p>Entrez votre le sujet de votre courriel s'il vous plaît</p></div>");
-		    			}
-		    			else if (empty($_POST['courriel']))
-		    			{
-		    				echo("<div><p>Entrez votre courriel s'il vous plaît</p></div>");
-		    			}
-		    			else if(empty($_POST['message']))
-		    			{
-		    				echo("<div><p>Entrez un message s'il vous plaît</p></div>");
-		    			}
-		    		}
-		    	?>
 		    	</form>
 			</div>
 		</div>

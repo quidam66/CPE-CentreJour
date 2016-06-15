@@ -4562,6 +4562,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
   .navbar-default {
     margin-right: 0;
+    height:145px;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #FFF;
