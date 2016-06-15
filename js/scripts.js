@@ -64,9 +64,19 @@ $(".nav a").on("click", function(){
 
 function resizeIframe()
 {
-	console.log($(".index_ifrm").contents().outerHeight());
+	console.log("contenu du iframe = " + $(".index_ifrm").contents().outerHeight());
+	console.log("la page = " + document.body.offsetHeight);
 	$(".index_ifrm").css("height", 0);
-	$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75);	
+	
+	if($(".index_ifrm").contents().outerHeight() < document.body.offsetHeight)
+	{
+		$(".index_ifrm").css("height", document.body.offsetHeight + "px");
+	}
+	else
+	{
+		$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75 + "px");
+	}
+		
 };
 
 function resizePrivatePage()
