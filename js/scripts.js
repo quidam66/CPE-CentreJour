@@ -66,15 +66,15 @@ function resizeIframe()
 {
 	console.log("contenu du iframe = " + $(".index_ifrm").contents().outerHeight());
 	console.log("la page = " + document.body.offsetHeight);
-	$(".index_ifrm").css("height", 0);
+	$(".index_ifrm").css({"height": "0"});
 	
 	if($(".index_ifrm").contents().outerHeight() < document.body.offsetHeight)
 	{
-		$(".index_ifrm").css("height", document.body.offsetHeight*.7 + "px");
+		$(".index_ifrm").css({"height":  document.body.offsetHeight+"px"});
 	}
 	else
 	{
-		$(".index_ifrm").css("height", $(".index_ifrm").contents().outerHeight() + 75 + "px");
+		$(".index_ifrm").css({"height": $(".index_ifrm").contents().outerHeight() + 75 + "px"});
 	}
 		
 };
@@ -111,6 +111,7 @@ function logout()
 
 $(document).ready(function()
 {
+	resizeIframe();
 	if($("#login-form-container").height() != null)
 	{
 		console.log($("#login-form-container").height());
@@ -159,5 +160,5 @@ $("#css2").click(function() { $("link[rel=stylesheet]").attr({href : "css/couleu
 
 
 //maframe.onLoad = resizeIframe();
-window.onresize = resizeIframe; 
+//window.onresize = resizeIframe; 
 

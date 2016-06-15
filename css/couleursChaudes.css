@@ -105,14 +105,14 @@ img {
   background-image: url("../images/logoCJ_3.png");
   background-repeat: no-repeat;
   background-size: 45%;
-  height: 160px;
+  height: 150px;
 }
 
 @media (max-width: 767px) {
   #logoCPE
   {
     background-size: 65%;
-    height: 90px;
+    height: 95px;
   }
 }
 
