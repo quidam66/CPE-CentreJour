@@ -70,7 +70,7 @@ function resizeIframe()
 	
 	if($(".index_ifrm").contents().outerHeight() < document.body.offsetHeight)
 	{
-		$(".index_ifrm").css("height", document.body.offsetHeight + "px");
+		$(".index_ifrm").css("height", document.body.offsetHeight*.7 + "px");
 	}
 	else
 	{
