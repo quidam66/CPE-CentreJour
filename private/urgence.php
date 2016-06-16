@@ -49,7 +49,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="../css/couleursChaudes.css">
+	<link rel="stylesheet" href="../css/styles.css">
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
@@ -86,10 +86,11 @@
 	            		<div class="warning-text"><p><?php echo $error; ?></p></div>
 			         	<div>
 							<input class="form-ckb" type="checkbox" id="affiche" name="affiche[]" value="message"/>
-							<label id="label-message" class="form-label"> Afficher le message</label>
+							<label class="form-label label-message">Afficher le message</label>
 						</div>
+						<div class="small-height"></div>
 						<div>
-							<div class="form-label">Dernier message enregistré:&nbsp;</div>
+							<div class="form-label label-message">Dernier message enregistré:&nbsp;</div>
 							<div id="json-texte"></div>
 						</div>
 						<div>

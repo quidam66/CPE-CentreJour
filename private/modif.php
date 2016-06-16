@@ -10,7 +10,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="../css/couleursChaudes.css" >
+	<link rel="stylesheet" href="../css/styles.css" >
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
@@ -27,13 +27,14 @@
 					<span>Recherchez par numéro</span>
 				</label>
 			</div>
+			<div class="small-height"></div>
 			<div>Numéro</div>
 			<div>
 				<label>
 					<input class="search-form" name="t_cpe_id" type="text" id="t_cpe_id" />
 				</label>
 			</div>
-			<div>Nom</td>
+			<div>Nom</div>
 			<div>
 				<label>
 					<input class="search-form" name="t_nom" type="text" id="t_nom" />
