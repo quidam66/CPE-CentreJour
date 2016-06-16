@@ -20,69 +20,54 @@
 	<div class="iframe-title-bg"><span>Manipulation de la liste d'employés(ées)</span></div>
 	<div id="modif-form-container">
 		<form id="form1" name="form1" method="post" action="code.php">
-			<table>
-				<tr>
-					<td class="couleur-fond-td">
-						<label>
-							<input class='btn btn-success' name="rechercher" type="submit" id="rechercher" value="Rechercher" />
-						</label>
-					</td>
-					<td class="couleur-fond-td">
-							<input class="search-form" name="t_rechercher" type="text" id="t_rechercher" />
-							<span>Recherche par numéro</span>
-					</td>
+			<div class="couleur-fond-td">
+				<label>
+					<input class='btn btn-success' name="rechercher" type="submit" id="rechercher" value="Rechercher" />
+					<input class="search-form" name="t_rechercher" type="text" id="t_rechercher" />
+					<span>Recherchez par numéro</span>
+				</label>
+			</div>
+			<div>Numéro</div>
+			<div>
+				<label>
+					<input class="search-form" name="t_cpe_id" type="text" id="t_cpe_id" />
+				</label>
+			</div>
+			<div>Nom</td>
+			<div>
+				<label>
+					<input class="search-form" name="t_nom" type="text" id="t_nom" />
+				</label>
+			</div>
 				</tr>
 				<tr>
-					<td>Numéro</td>
-					<td>
-						<label>
-							<input class="search-form" name="t_cpe_id" type="text" id="t_cpe_id" />
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>Nom</td>
-					<td>
-						<label>
-							<input class="search-form" name="t_nom" type="text" id="t_nom" />
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>Prénom</td>
-					<td>
-						<label>
-							<input class="search-form" name="t_prenom" type="text" id="t_prenom" />
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>Poste</td>
-					<td>
-						<label>
-							<input class="search-form" name="t_poste" type="text" id="t_poste" />
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td>Groupe</td>
-					<td>
-						<label>
-							<select name="t_groupe" type="text" id="t_groupe" />
-								<option>Employés</option>
-								<option>Administration</option>
-							<select>
-						</label>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<label>
-							<input class='btn btn-success' name="ajouter" type="submit" id="ajouter" value="Ajouter" />
-						</label>
-					</td>
-				</tr>
-			</table>
+			<div>Prénom</div>
+			<div>
+				<label>
+					<input class="search-form" name="t_prenom" type="text" id="t_prenom" />
+				</label>
+			</div>
+			<div>Poste</div>
+			<div>
+				<label>
+					<input class="search-form" name="t_poste" type="text" id="t_poste" />
+				</label>
+			</div>
+			<div>Groupe</div>
+			<div>
+				<label>
+					<select name="t_groupe" type="text" id="t_groupe" />
+						<option>Employés</option>
+						<option>Administration</option>
+					<select>
+				</label>
+			</div>
+			 <div class='small-height'></div>
+			<div>
+				<label>
+					<input class='btn btn-success' name="ajouter" type="submit" id="ajouter" value="Ajouter" />
+				</label>
+			</div>
 		</form>
 <?php
 	try
@@ -98,14 +83,19 @@
 
 	$reponse = $bdd->query('SELECT * FROM employes ORDER BY nom');  
 ?>
-		<table>
-			<tr>
-				<th>Numéro</th>
-				<th>Nom</th>
-				<th>Prénom</th>
-				<th>Poste</th>
-				<th>Groupe</th>
-			</tr>
+		<div class="small-height"></div>
+		<div class="form-label">Liste des employés(ées)</div>
+		<table class="tableEmploye">
+			<thead>
+				<tr>
+					<th>Numéro</th>
+					<th>Nom</th>
+					<th>Prénom</th>
+					<th>Poste</th>
+					<th>Groupe</th>
+				</tr>
+			</thead>
+			<body>
 <?php
 $var=0;
 while ($donnees = $reponse->fetch())
@@ -140,6 +130,7 @@ $var=0;
  }
 $reponse->closeCursor();
 ?>
+		</body>
 		</table>
 	</div>
 	<div id='btn-back'>

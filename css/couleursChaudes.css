@@ -258,6 +258,7 @@ img {
 .couleur-fond-td
 {
   background-color: #ffcc00;
+  padding: 10px 10px 0 10px;
 }
 
 .color-row-zero
@@ -542,12 +543,18 @@ td, th {
     white-space: nowrap;
   }
 
-  td:nth-of-type(1):before { content: ""; }
-  td:nth-of-type(2):before { content: "Lundi"; }
-  td:nth-of-type(3):before { content: "Mardi"; }
-  td:nth-of-type(4):before { content: "Mercredi"; }
-  td:nth-of-type(5):before { content: "Jeudi"; }
-  td:nth-of-type(6):before { content: "Vendredi"; }
+  .tableMenu td:nth-of-type(1):before { content: ""; }
+  .tableMenu td:nth-of-type(2):before { content: "Lundi"; }
+  .tableMenu td:nth-of-type(3):before { content: "Mardi"; }
+  .tableMenu td:nth-of-type(4):before { content: "Mercredi"; }
+  .tableMenu td:nth-of-type(5):before { content: "Jeudi"; }
+  .tableMenu td:nth-of-type(6):before { content: "Vendredi"; }
+
+  .tableEmploye td:nth-of-type(1):before { content: "Numéro"; }
+  .tableEmploye td:nth-of-type(2):before { content: "Nom"; }
+  .tableEmploye td:nth-of-type(3):before { content: "Prénom"; }
+  .tableEmploye td:nth-of-type(4):before { content: "Poste"; }
+  .tableEmploye td:nth-of-type(5):before { content: "Groupe"; }
 }
 
 .first-column
@@ -589,7 +596,7 @@ td, th {
 @media (max-width: 767px){
   .form-input, .form-input-contact
   {
-    width:250px;
+    width:200px;
   }
 }
 
@@ -627,9 +634,9 @@ td, th {
 }
 
 @media (max-width: 767px){
-  .message-text, .message-text-contact
+  .message-text-message, .message-text-contact
   {
-    width:285px;
+    width:205px;
   }
 }
 
@@ -776,4 +783,9 @@ img.align-right
   width:75%;
   margin: auto;
   padding-top: 20px;
+}
+
+#t_rechercher
+{
+  width: 50px;
 }

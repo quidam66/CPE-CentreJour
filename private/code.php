@@ -10,8 +10,8 @@ $groupe=$_POST['t_groupe'];
 
 try
 {
-  //$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
-  $bdd = new PDO('mysql:host=http://www.cpecentrejour.com/gdddbmgr/;port=3306;dbname=DAVOS_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
+  $bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+  //$bdd = new PDO('mysql:host=http://www.cpecentrejour.com/gdddbmgr/;port=3306;dbname=DAVOS_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
   $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (Exception $e)
@@ -57,70 +57,59 @@ if (isset($_POST['rechercher']))
     <div id='code-form-container'>
         <form id='form1' name='form1' method='post' action='code.php'>
             <input name='t_rechercher' type='hidden' id='t_rechercher' value='$rech'/>
-            <table>
-                <tr>
-                    <td>Identifiant</td>
-                    <td>
-                        <label>
-                            <input class='search-form' name='t_cpe_id' type='text' id='t_cpe_id' value='$donnees[cpe_id]'/>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nom</td>
-                    <td>
-                        <label>
-                            <input class='search-form' name='t_nom' type='text' id='t_nom'  value='$donnees[nom]'/>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Prénom</td>
-                    <td>
-                        <label>
-                            <input class='search-form' name='t_prenom' type='text' id='t_prenom' value='$donnees[prenom]' />
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Poste</td>
-                    <td>
-                        <label>
-                            <input class='search-form' name='t_poste' type='text' id='t_poste' value='$donnees[titre]' />
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Groupe</td>
-                    <td>
-                        <label>
-                            <select name='t_groupe' id='t_groupe' value='$donnees[groupe]' />";
-                                
-                                if($donnees['groupe'] == 'Employés')
-                                {
-                                    echo "<option selected>Employés</option>
-                                            <option>Administration</option>";
-                                }
-                                else
-                                {
-                                    echo "<option>Employés</option>
-                                <option selected>Administration</option>";
-                                }      
-                            echo "
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan='2'>
-                        <label>
-                            <input class='btn btn-warning' name='modifier' type='submit' id='modifier' value='Modifier' />
-                            <input class='btn btn-danger' name='supprimer' type='submit' id='supprimer' value='Supprimer' />
-                        </label>
-                    </td>
-                </tr>
-            </table>
+            <div>Identifiant</div>
+            <div>
+                <label>
+                    <input class='search-form' name='t_cpe_id' type='text' id='t_cpe_id' value='$donnees[cpe_id]'/>
+                </label>
+            </div>
+            <div>Nom</div>
+            <div>
+                <label>
+                    <input class='search-form' name='t_nom' type='text' id='t_nom'  value='$donnees[nom]'/>
+                </label>
+            </div>
+            <div>Prénom</div>
+            <div>
+                <label>
+                    <input class='search-form' name='t_prenom' type='text' id='t_prenom' value='$donnees[prenom]' />
+                </label>
+            </div>
+            <div>Poste</div>
+            <div>
+                <label>
+                    <input class='search-form' name='t_poste' type='text' id='t_poste' value='$donnees[titre]' />
+                </label>
+            </div>
+            <div>Groupe</div>
+            <div>
+                <label>
+                    <select name='t_groupe' id='t_groupe' value='$donnees[groupe]' >";
+                        
+                        if($donnees['groupe'] == 'Employés')
+                        {
+                            echo "<option selected>Employés</option>
+                                    <option>Administration</option>";
+                        }
+                        else
+                        {
+                            echo "<option>Employés</option>
+                        <option selected>Administration</option>";
+                        }      
+                    echo "
+                    </select>
+                </label>
+            </div>
+            <div class='small-height'></div>
+            <div>
+                <label>
+                    <input class='btn btn-warning' name='modifier' type='submit' id='modifier' value='Modifier' />
+                    <input class='btn btn-danger' name='supprimer' type='submit' id='supprimer' value='Supprimer' />
+                </label>
+            </div>
         </form>
     </div>
+    <div class='small-height'></div>
     <div id='btn-back'>
         <button class='btn btn-primary' onclick='goBack()'>Retour</button>
     </div>
