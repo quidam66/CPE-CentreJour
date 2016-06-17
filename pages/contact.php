@@ -10,15 +10,18 @@
 
 
 			$from = $nom.'<'.$courriel.'>';
-			$to = "CPE Centre Jour <reception@cpecentrejour.com>";
+			$to = 'direction@cpecentrejour.com';
+			$cc = 'reception@cpecentrejour.com';
+			$recipients = $to. ','. $cc;
 			$subject = $_POST['sujet'];
 			$body = $_POST['message'];
 			$host = "pop.logicielsdavos.com";
 
-			$username = "reception@cpecentrejour.com";
+			$username = "cpecentrejour@logicielsdavos.com";
 			$password = "22X6503U";
 			$headers = array ('From' => $from,
 			                  'To' => $to,
+			                  'Cc' => $cc,
 			                  'Subject' => $subject);
 			$smtp = Mail::factory('smtp',
 			                      array ('host' => $host,
@@ -27,7 +30,7 @@
 			                             'password' => $password));
 
 			                             
-			$mail = $smtp->send($to, $headers, $body);
+			$mail = $smtp->send($recipients, $headers, $body);
 			 
 			if (PEAR::isError($mail))
 			{
