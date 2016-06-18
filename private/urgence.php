@@ -1,42 +1,49 @@
 <?php
-   include('session.php');
-
-	$json = file_get_contents("message.json");
-
-	//$parsed_json = json_decode($json);
-
-	$data = json_decode($json, true);
-	//$message = $parsed_json->{'message'}->{'texte'};
-	$message = $data['message']['texte'];
+	include('session.php');
 
 	$error = "";
 
-	if($_SERVER["REQUEST_METHOD"] == "POST")
+	try
 	{
-      	if((($_POST['texte'] != '') && isset($_POST['affiche'])) ||
-      	  (($_POST['texte'] != '') && !isset($_POST['affiche'])) ||
-      	  (($_POST['texte'] == '') && !isset($_POST['affiche'])))
-      	{
-	      	if(isset($_POST['affiche']))
-	      	{
-	      		$data['message']['active'] = true;
-	      	}
-	      	else
-	      	{
-	      		$data['message']['active'] = false;
-	      	}
+		//$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+		$bdd = new PDO('mysql:host=localhost;dbname=Davos_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
+		
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
 
-      		$data['message']['texte'] = $_POST['texte'];
-			$date = date('d-m-Y');
-			$data['message']['date'] = $date;
-			$newJsonString = json_encode($data);
-			file_put_contents('message.json', $newJsonString); 
-      	}
-      	else if (($_POST['texte'] == '') && isset($_POST['affiche']))
-      	{
-      		$error = "Veuillez entrer un message.";
-      	}
-    }
+	$message = $bdd->query('SELECT * FROM message');
+
+	$result = $message->fetchAll(PDO::FETCH_ASSOC);
+
+	if (isset($_POST['envoyer']))
+	{
+		if($_POST['afficher'] == 1)
+		{
+			if($_POST['texte'] == '')
+			{
+				$error = "Veuillez entrer un message.";
+			}
+			else if($_POST['date'] == '')
+			{
+				$error = "Veuillez entrer la date du jour.";
+			}
+			else
+			{
+				$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."',texte='".htmlentities ($_POST['texte'], ENT_QUOTES)."',date='".$_POST['date']."' where id='1'");
+				$error = "Le message a été enregistré et sera afficher sur la page d'accueil.";
+			}
+		}
+		else
+		{
+			$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."' where id='1'");
+			$error = "Il n'y aura plus de message affiché sur la page d'accueil.";
+		}
+
+	}
 ?>
 
 <!DOCTYPE html>
@@ -54,44 +61,39 @@
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
 	<script src="../js/scripts.js"></script>
-	<script type = "text/javascript" language = "javascript">
-		$(document).ready(function() {
-           $.getJSON('message.json', function(jd) {
-           		console.log(jd.message.active);
-           		console.log(jd.message.texte);
-           		console.log(jd.message.date);
-           		$('#affiche').prop("checked", jd.message.active);
-
-           		if(jd.message.texte == "")
-           		{
-           			$('#json-texte').append('<p>Aucun message à afficher</p>');
-           		}
-           		else
-           		{
-           			$('#json-texte').append('<p>' + jd.message.date+ ' : ' + jd.message.texte + '</p>');
-           			$('.texte').val(jd.message.texte);
-           		}
-           });
-		});	
-	</script>
 </head>
 <body class="private-page">
    <div id="urgence-form-container">
       <div class="iframe-p-text">
-         <div class="iframe-title-bg"><span>Section réservée à l'administration</span></div>
+         <div class="iframe-title-bg"><span>Gestion des messages importants</span></div>
          	<div class="texteInfo">
             	<div class="box-title">Entrez le message</div>
 	            <div class="box-inner">
 	            	<form class="message-form" id="formulaire" name="formulaire" action="" method="POST">
 	            		<div class="warning-text"><p><?php echo $error; ?></p></div>
 			         	<div>
-							<input class="form-ckb" type="checkbox" id="affiche" name="affiche[]" value="message"/>
-							<label class="form-label label-message">Afficher le message</label>
+							<div class="form-label label-message">Afficher le message</div>
+							<label>
+								<select name="afficher" type="text" id="aficher">
+								<?php
+								if($result[0]['afficher'] == 1)
+		                        {
+		                            echo "<option selected value='1'>Oui</option>
+		                                  <option value='0'>Non</option>";
+		                        }
+		                        else
+		                        {
+		                            echo "<option value='1'>Oui</option>
+		                        <option selected value='0'>Non</option>";
+		                        } 
+		                        ?>
+		                        </select>
+							</label>
 						</div>
 						<div class="small-height"></div>
 						<div>
 							<div class="form-label label-message">Dernier message enregistré:&nbsp;</div>
-							<div id="json-texte"></div>
+							<div id="json-texte"><?php echo "<p class='messageInDB'>".$result[0]['date']." : ".$result[0]['texte']."</p>" ?></div>
 						</div>
 						<div>
 							<div class="form-label">Votre message:&nbsp;</div>
@@ -99,9 +101,16 @@
 								<textarea class="texte message-text-message" id="texte" name="texte"></textarea>
 							</div>
 						</div>
+						<div>
+							<div class="form-label">Date du jour:&nbsp;</div>
+							<div>
+								<input class="search-form" id="date" name="date" placeholder="jj-mm-aaaa"></input>
+							</div>
+						</div>
 						<div class="small-height"></div>
 						<div>
-						  	<button type="button submit" class="btn btn-primary">Envoyer</button>
+							<input class='btn btn-primary' name='envoyer' type='submit' id='envoyer' value='Envoyer' />
+						  	<!-- <button type="button submit" class="btn btn-primary">Envoyer</button> -->
 						</div>
 		                <div class="small-height"></div>
 					</form>

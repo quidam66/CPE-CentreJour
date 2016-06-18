@@ -1,3 +1,24 @@
+<?php
+
+	$error = "";
+
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=cpecentrejour;charset=utf8', 'root', '');
+		//$bdd = new PDO('mysql:host=localhost;dbname=Davos_CPECentreJour;charset=utf8', 'Davos_CPECentreJ', 'U7UHsbKPfuUyteH6');
+		
+		$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' . $e->getMessage());
+	}
+
+	$message = $bdd->query('SELECT * FROM message');
+
+	$result = $message->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!doctype html>
 <html class="no-js" lang="fr-CA">
 <head>
@@ -11,32 +32,23 @@
 	<link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 	<script src="../bootstrap/js/jquery-2.1.3.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.js"></script>
-
-	<script type = "text/javascript" language = "javascript">
-		$(document).ready(function() {
-           $.getJSON('../private/message.json', function(jd) {
-           		console.log(jd.message.active);
-           		if(jd.message.active == true)
-           		{
-           			$("#warning").css({"display":"block"});
-           			$(".warning-text").append(jd.message.date+ ' : ' + jd.message.texte);
-           		}
-           		else
-           		{
-           			$("#warning").css({"display":"none"});           			
-           		}
-           });
-		});	
-	</script>
 </head>
 <body class="iframeBody background-accueil">	
 	<div class="container">	
 		<div>
 			<div class="iframe-p-text">
-				<div id="warning">
-					<div class="iframe-title-bg-warning"><span>Message Important</span></div>
-					<p class="warning-text"></p>
-				</div>
+				<?php
+					if($result[0]['afficher'] == 1)
+					{
+						echo "
+							<div id='warning'>
+								<div class='iframe-title-bg-warning'><span>Message Important</span></div>
+								<p class='warning-text'>".$result[0]['date']. " : " .$result[0]['texte']."</p>
+							</div>
+						";
+					}
+				?>
+
 				<div class="iframe-title-bg"><span>À propos de nous</span></div>
 				<p>Depuis son ouverture en 1971 sur le campus de l’Université Laval, le CPE Centre Jour a toujours été animé par une même mission :</p>
 				<div class="iframe-div-title small-height center-title">* Offrir des services éducatifs de grande qualité aux enfants*</div>
