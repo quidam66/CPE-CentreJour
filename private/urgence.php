@@ -33,13 +33,13 @@
 			}
 			else
 			{
-				$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."',texte='".htmlentities ($_POST['texte'], ENT_QUOTES)."',date='".$_POST['date']."' where id='1'");
+				$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."',texte='".htmlentities ($_POST['texte'], ENT_QUOTES)."',date='".$_POST['date']."' WHERE id='1'");
 				$error = "Le message a été enregistré et sera afficher sur la page d'accueil.";
 			}
 		}
 		else
 		{
-			$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."' where id='1'");
+			$bdd->exec("UPDATE message SET afficher='".$_POST['afficher']."' WHERE id='1'");
 			$error = "Il n'y aura plus de message affiché sur la page d'accueil.";
 		}
 
