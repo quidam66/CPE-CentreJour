@@ -56,13 +56,9 @@
 				<p>CPE Centre Jour accueille 76 enfants à partir de 18 mois et a à son emploi une équipe d’éducatrices compétentes et dévouées, une responsable à l’alimentation, une adjointe à la comptabilité et aux finances et une directrice générale.</p>
 
 				<div class="iframe-title-bg"><span>Liste d’attente</span></div>
-				<p>Vous avez besoin d’une place pour votre enfant dans notre service de garde ?</p>
+				<p> Vous êtes à la recherche d’une place en CPE pour votre enfant? Rendez-vous à : <a href="http://www.Laplace0-5.com" target="_blank">www.Laplace0-5.com</a>. C’est la seule façon d’inscrire votre enfant sur la liste d’attente de notre CPE. Vous pouvez aussi composer le 1 844-270-5055 ou 514-270-5055.</p>
 				<div class="small-height"></div>
-				<p>Rendez-vous à : <a href="http://www.Laplace0-5.com" target="_blank">www.Laplace0-5.com</a> ou composez le : 1 844-270-5055 ou 514-270-5055.</p>
-				<div class="small-height"></div>
-				<p>C’est la seule porte d’entrée des parents pour inscrire leurs enfants dans notre service de garde.</p>
-				<div class="small-height"></div>
-				<p>De plus, nous privilégions les employés et étudiants de l’Université Laval. </p>
+				<p>Étant un CPE en milieu universitaire, nous privilégions les employés et étudiants de l’Université Laval.</p>
 			</div>
 		</div>
 	</div>
